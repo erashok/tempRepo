@@ -1,0 +1,20 @@
+@media screen and (max-width: 1199px) {
+  #header_internal {
+    width: 970px;
+
+    .header_internal_wrapper {
+      width: 1135px;
+    }
+  }
+
+  div.inner-page-message {
+
+    .details-header {
+      width: 970px;
+    }
+  }
+
+  .container, .footer .container, .global-message .message-wrapper {
+    width: 970px;
+  }
+}

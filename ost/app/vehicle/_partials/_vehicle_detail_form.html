@@ -1,0 +1,139 @@
+<section id="vehicle_detail_form">
+
+    <form name="vehicleDetailForm">
+
+        <!-- car info -->
+        <div class="form-group row mar-all-0">
+            <label class="full">Is this vehicle owned, financed or leased?</label>
+
+            <label class="radio-inline col-xs-12 col-md-2">
+                <input type="radio" name="purchaseType" value="OWNED" ng-model="vehicle.purchaseType"> Owned
+            </label>
+
+            <label class="radio-inline col-xs-12 col-md-2">
+                <input type="radio" name="purchaseType" value="FINANCED" ng-model="vehicle.purchaseType"> Financed
+            </label>
+
+            <label class="radio-inline col-xs-12 col-md-2">
+                <input type="radio" name="purchaseType" value="LEASED" ng-model="vehicle.purchaseType"> Leased
+            </label>
+
+            <label class="radio-inline col-xs-12 col-md-2">
+                <input type="radio" name="purchaseType" value="OTHER" ng-model="vehicle.purchaseType"> Other
+            </label>
+        </div>
+
+        <!-- primary driver info -->
+        <div class="form-group row mar-all-0">
+            <label class="full">Who is the primary driver of the vehicle?</label>
+
+            <label ng-repeat="driver in drivers" class="radio-inline col-xs-12 col-md-4">
+                <input type="radio" name="primaryDriverId" value="{{driver.data.driverId}}" ng-model="vehicle.primaryDriverId"> {{driver.data.firstName + " " + driver.data.lastName}}
+            </label>
+        </div>
+
+        <!-- primary use -->
+        <div class="form-group row mar-all-0">
+            <label class="full">How do you use this vehicle most of the time?</label>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 pad-all-0">
+                <label class="radio">
+                    <input type="radio" name="primary_use" ng-model="vehicle.vehicleUse" value="WORK_SCHOOL"> I primarily use this vehicle to drive to work or school
+                </label>
+
+                <div ng-show="vehicle.vehicleUse === 'WORK_SCHOOL'" class="clearfix inline-form-box">
+                    <h4>Distance one way to work or school</h4>
+                    <p>You can estimate if you don't know</p>
+                    <div class="form-inline">
+                        <div class="form-group mar-all-0 pad-all-0">
+                            <input class="small" type="number" ng-model="vehicle.distanceToWork">
+                            <strong>miles</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="radio">
+                    <input type="radio" name="primary_use" ng-model="vehicle.vehicleUse" value="LEISURE"> I use this for leisure or on the weekends
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="primary_use" ng-model="vehicle.vehicleUse" value="BUSINESS"> I use this for business purposes
+                </label>
+            </div>
+        </div>
+
+        <!-- annual average mileage -->
+        <div class="form-group row mar-all-0">
+            <label class="full">What is the average annual mileage?</label>
+            <input class="small" ng-model="vehicle.annualMileage" type="number"/>
+            <strong>miles</strong>
+        </div>
+
+        <!-- parking info -->
+        <div class="form-group row mar-all-0">
+            <label class="full">Where is this vehicle primarily parked?</label>
+            <input class="small" type="number" ng-model="vehicle.parkedZipCode" placeholder="zipcode"/>
+        </div>
+
+        <!-- safety discounts -->
+        <div class="form-group row mar-all-0">
+            <div class="col-md-12 pad-all-0">
+                <label class="full">We offer discounts for certain safety features. Select all that apply.</label>
+                <h4>Common Features:</h4>
+            </div>
+            <div class="col-md-6 col-sm-6 pad-all-0">
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.ANTI_LOCK_BRAKES" /> Anti-lock brakes <tooltip></tooltip>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.DRIVER_PASSENGER_AIRBAGS" /> Driver / Passenger airbags <tooltip></tooltip>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.DRIVER_AIRBAGS" /> Driver side only airbag <tooltip></tooltip>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.AUTOMATIC_SEATBELTS" /> Automatic seat belts <tooltip></tooltip>
+                </label>
+
+            </div>
+            <div class="col-md-6 col-sm-6 pad-all-0">
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.DAYTIME_RUNNING_LIGHTS" /> Daytime running lights <tooltip></tooltip>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="safetyFeatures.ANTI_THEFT_ALARM"/> Anti-theft alarm <tooltip content="Hello" placement="top"></tooltip>
+                </label>
+
+            </div>
+            <div class="col-md-12 pad-all-0">
+                <h4>Additional Features:</h4>
+            </div>
+            <div class="col-md-12 pad-all-0">
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="additionalFeatures.COMBAT_AUTO_THEFT" /> Combat Auto Theft Program
+                    <small>Auto theft prevention program</small>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="additionalFeatures.VIN_ETCHING" /> VIN etched into the glass
+                    <small>Prevent motor vehicle theft</small>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="additionalFeatures.ELECTRONIC_RECOVERY_DEVICE" /> Electronic recovery device
+                    <small>Tells police where your car is</small>
+                </label>
+
+            </div>
+        </div>
+
+    </form>
+
+</section>

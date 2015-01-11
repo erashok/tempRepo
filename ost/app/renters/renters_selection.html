@@ -1,0 +1,58 @@
+<div id="renters_selection" class="col-md-12 pad-all-0">
+
+    <div class="compare_plans_button_region pull-right">
+        <a href="#/quote_coverage" class="btn basic hidden-xs hidden-s">Compare Plans</a>
+    </div>
+
+    <div class="pad-all-0 mar-all-0">
+
+        <tabset class="clearfix">
+
+            <!-- state minimum tab -->
+            <tab select="loadContent(140)">
+
+                <tab-heading>
+                    <span class="all-caps">state minimum</span>
+                    <h3 class="price large light">
+                        <sup>$</sup>140
+                    </h3>
+                </tab-heading>
+
+                <div ng-include="'renters/_partials/_renters_selection_form.html'"></div>
+
+            </tab>
+
+            <!-- standard tab -->
+            <tab select="loadContent(160)">
+                <tab-heading>
+                    <span class="all-caps">Custom Plan</span>
+                    <h3 class="price large light">
+                        <sup>$</sup>160
+                    </h3>
+                </tab-heading>
+
+                <div ng-include="'renters/_partials/_renters_selection_form.html'"></div>
+
+            </tab>
+
+            <!-- total protection tab -->
+            <tab select="loadContent(200)">
+                <tab-heading>
+                    <span class="all-caps">total protection</span>
+                    <h3 class="price large light">
+                        <sup>$</sup>200
+                    </h3>
+                </tab-heading>
+
+                <div ng-include="'renters/_partials/_renters_selection_form.html'"></div>
+
+            </tab>
+
+            <!-- Vehicle Modal -->
+            <div ng-include="'/vehicles_drivers/_partials/_new_vehicle_modal.html'"></div>
+
+        </tabset>
+    
+    </div>
+
+</div>

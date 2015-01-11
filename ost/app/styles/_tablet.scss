@@ -1,0 +1,87 @@
+//Tablet styles imported into the main.scss media queries for tablet targeting.
+	
+body {
+	width: 980px !important;
+	overflow-x: hidden !important;
+	position: static !important;
+}
+
+.container {
+	width: 980px !important;
+}
+
+.header {
+	padding: 0 !important;
+	margin: 0 !important;
+
+	#header_internal {
+		width: 1135px !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	
+		/*
+		.secure-purchase-ribbon {
+			background: gold !important;
+		}
+		*/
+		
+		.title-snoopy-combo {
+			padding: 0 !important;
+			margin: 0 !important;
+			position: relative !important;
+			left: 0px !important;
+			//background: gold !important;
+			
+			.title-header {
+				padding: 0 !important;
+				margin: 0 !important;
+				position: relative !important;
+				top: 0px !important;
+				left: 32px !important;
+				text-align: left !important;
+				//background: gold !important;
+				
+				body.ios7 & {
+					left: 17px !important;
+				}
+				
+				h1 {
+					font-size: 40px !important;
+					text-align: left !important;
+				}
+			}
+				
+			.snoopy-icon {
+				position: relative !important;
+				left: 0px !important;
+				top: 5px !important;
+			}
+		}
+	}
+}
+
+.modal {
+	//width: 100%!important;
+	
+	.modal-content {
+		
+		.modal-body {
+			padding-top: 3px;
+			padding-bottom: 25px;
+			
+			hr {
+				margin-top: 55px;
+				margin-bottom: 56px;
+			}
+			
+			.styled-select select {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.modal-backdrop {
+	// width: 100% !important;
+	// position: absolute !important;
+}

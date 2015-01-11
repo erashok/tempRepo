@@ -1,0 +1,78 @@
+<!-- HEADER CTA -->
+<!-- desktop / tablet -->
+<div ng-include="'/renters/_partials/_quote_cta_page_top.html'"></div>
+
+<!-- LIABILITY COVERAGE -->
+<section id="liability_coverage" class="clearfix mar-all-0 pad-all-0">
+
+    <header class="row coverage-row hidden-xs">
+        <h2>Your liability coverage</h2>
+        <p>These coverages protect you and your assets if you are in an accident</p>
+    </header>
+
+    <div ng-include="'/renters/_partials/coverage_tables/_liability_coverage_table.html'"></div>
+</section>
+
+<!-- VEHICLE COVERAGE -->
+<section id="vehicle_coverage" class="clearfix mar-all-0 pad-all-0">
+
+    <header class="row coverage-row">
+        <div class="col-xs-12 col-sm-8 col-md-8 pad-all-0">
+            <h2>Your vehicle coverage</h2>
+            <p>These coverages protect your vehicles if they are damaged</p>
+        </div>
+
+        <div class="coverage-header-link col-sm-4 col-md-4 pad-all-0 hidden-xs">
+            <a href="#"><icon class="expand-icon" type="plus"></icon> Add another vehicle</a>
+        </div>
+    </header>
+
+</section>
+
+<div id="vehicles_list">
+    <section ng-repeat="vehicle in vehicles" class="auto_section clearfix pad-all-0">
+        <div class="col-md-12 col-sm-12 lockup-heading hidden-xs">
+            <img class="car pull-left mar-right-30" ng-src="assets/images/{{vehicle.image}}">
+            <small><strong class="grey">Vehicle {{$index + 1}}</strong></small>
+
+            <div>
+                <h3><strong>{{vehicle.data.year}} {{vehicle.data.make}}</strong> <span class="light">{{vehicle.data.model}} {{vehicle.data.trim}}</span><a href="#">&nbsp; Edit or remove</a></h3>
+            </div>
+
+        </div>
+        <div ng-include="'/renters/_partials/coverage_tables/_vehicle_coverage_table.html'"></div>
+    </section>
+</div>
+
+<!-- DRIVERS -->
+<section id="drivers" class="clearfix col-xs-12 mar-all-0">
+
+    <header class="row coverage-row mar-all-0">
+        <h2>Your Drivers</h2>
+        <p>Confirm that the drivers listed below are correct</p>
+    </header>
+
+    <div class="driver" ng-repeat="driver in drivers">
+
+        <div class="driver-avatar pull-left">
+            <icon type="avatar" size="medium"></icon>
+        </div>
+        <div class="col-sm-3 col-md-3 pad-all-0">
+            <h3>{{driver.data.firstName}} {{driver.data.lastName}}</h3>
+            <a ng-hide="driver.primary == false" href="#">Edit</a><span>
+            <a ng-hide="driver.primary == true" href="#">Edit or remove</a><span>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 pad-all-0">
+        <div class="coverage-header-link pad-all-0">
+            <a href="#"><icon class="add-icon" type="plus"></icon> Add another driver</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER CTA -->
+<div ng-include="'/renters/_partials/_quote_cta_page_bottom.html'"></div>

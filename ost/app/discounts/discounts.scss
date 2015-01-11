@@ -1,0 +1,116 @@
+#discounts {
+
+  margin-top: 80px;
+
+  footer {
+    @include button-footer();
+  }
+
+  #discounts_form {
+
+    header {
+      p {
+        font-size: 20px;
+      }
+
+      hr {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  #discounts_callout {
+
+    & .well {
+
+      #view_all_discounts{
+
+        margin-top: 10px;
+
+        a#view_all_discounts_link {
+          margin: 0px 0px 0px 5px;
+          position: relative;
+          bottom: 5px;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
+
+      section {
+        header {
+          margin-bottom: 10px;
+        }
+      }
+
+      hr {
+        border-bottom: solid 1px lighten($mid-blue, 30%);
+      }
+
+      // TODO: make a mixin so this is not so repeatitive
+      ul {
+          list-style: square url("/assets/images/icon_check_list.png");
+        li {
+          margin-bottom: 3px;
+          line-height: 28px;
+        }
+      }
+    }
+
+  }
+
+}
+
+/* iPhone */
+@media screen and (min-width: 400px) and (max-width: 500px) {
+
+  #discounts {
+
+    header {
+      h2 {
+        font-size: 23px;
+      }
+
+      p {
+        font-size: 15px !important;
+      }
+    }
+
+    margin-top: 40px;
+
+    #discounts_callout {
+      & .well {
+        padding: 0px 0px 10px 15px;
+      }
+    }
+
+    #discounts_form {
+      input,
+      select {
+        width: 100%;
+      }
+    }
+
+    // TODO: make a mixin so this is not so repeatitive
+    ul {
+      list-style: square url("/assets/images/icon_check_list.png");
+      li {
+        margin-bottom: 3px;
+      }
+    }
+
+    footer {
+      #mobile_quote_button_label {
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: black;
+      }
+
+      #get_quote_button {
+        width: 100%;
+      }
+    }
+
+  }
+
+}

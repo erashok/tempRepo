@@ -1,0 +1,50 @@
+<div class="accordion-wrap mar-bottom-30">
+
+    <div id="checking_well" class="accordion-well well warning">
+        <icon class="icon" type="alert_flag_orange"></icon> $190 (auto) + $10 (renters) will be charged monthly
+    </div>
+
+    <form name="accordion_form_credit">
+
+        <ng-form name="nameOnCardForm">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Name on card</label>
+                <input class="col-sm-8 col-md-8" type="text" ng-model="paymentForm.credit.name_on_card" placeholder="First and last name"/>
+            </div>
+        </ng-form>
+
+        <ng-form name="creditCardNumber">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Account Number</label>
+
+                <input class="col-sm-8 col-md-8" type="text" ng-model="paymentForm.credit.credit_card_number" placeholder="Credit card number"/>
+
+                <div id="credit_card_icons" class="inline">
+                    <icon class="cc" type="cc_mastercard"></icon>
+                    <icon class="cc" type="cc_visa"></icon>
+                    <icon class="cc" type="cc_amex"></icon>
+                </div>
+            </div>
+        </ng-form>
+
+        <ng-form name="accountTypeForm">
+            <div class="clearfix">
+                <label class="full">Expiration Date</label>
+
+                <select class="pull-left mar-right-40" ng-model="paymentForm.checking.card_expy_month" name="card_expy_month" ng-options="option.value as option.name for option in monthSelectOptions" ng-init="paymentForm.checking.card_expy_month = monthSelectOptions[0].value"></select>
+
+                <label>&nbsp;</label>
+                <select class="pull-left mar-right-40" ng-model="paymentForm.checking.card_expy_year" name="card_expy_year" ng-options="option.value as option.name for option in yearSelectOptions" ng-init="paymentForm.checking.card_expy_year = yearSelectOptions[0].value">
+                </select>
+            </div>
+        </ng-form>
+
+        <ng-form name="creditCardNumber">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Security Code <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Tooltip"></icon></label>
+                <input type="text" ng-model="paymentForm.credit.security_code"/>
+            </div>
+        </ng-form>
+
+    </form>
+</div>

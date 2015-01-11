@@ -1,0 +1,339 @@
+<table class="table table-striped-expandable col-three hidden-xs col-md-12 pad-all-0">
+
+<thead>
+    <tr>
+        <th>Coverage Type</th>
+        <th>Limits &amp; Deductibles</th>
+        <th>Monthly Premium</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr class="expandable" id="rowOne-{{price}}-{{($index+1)*9}}">
+        <td ng-click="toggler($event, 'row')">
+
+            <div class="expandable-icon">
+                <icon type="expand"></icon>
+                <icon style="display:none" type="collapse"></icon>
+            </div>
+
+            <h4>Comprehensive</h4>
+
+            <p>Protect you and any property if you’re ever at fault in an accident. Leased or financed vehicles require
+                Comprehensive protection.</p>
+            <a href="">How much coverage do I need?</a>
+        </td>
+        <td>
+            <div class="styled-select">
+                <select ng-model="vehicles[$index].comprehensive">
+                    <option value="true">I accept</option>
+                    <option value="false">I decline</option>
+                </select>
+            </div>
+            <p class="footnote">Your current policy is $1,000 deductible</p>
+        </td>
+        <td>
+            <h4>$62.80</h4>
+        </td>
+    </tr>
+
+    <tr class="collapsed-content" data-parent="rowOne-{{price}}-{{($index+1)*9}}">
+        <td colspan="4">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <h4>Choosing the right level of coverage</h4>
+
+                    <p>This is an area where the customer could read about scenarios where the different coverages amounts
+                        are important. Ullam velit odio, vehicula eu auctor ut, volutpat sed turpis.</p>
+                    <ul>
+                        <li>Choose $100,000 for lorem ipsum reason</li>
+                        <li>$200,000 will protect you for lorem reasons as well</li>
+                        <li>To ensure the best safety choose $300,000 lorem ipsum</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h4>People like you choose</h4>
+
+                    <div class="inline">
+                        <div class="pull-left" style="width: 88px; height: 88px">
+                            <icon type="pie" style="width: 88px; height: 88px"></icon>
+                        </div>
+                        <p><strong>80%</strong> of people with your same car choose $100,00/$200,000</p>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <tr class="expandable" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" id="rowTwo-{{price}}-{{($index+1)*9}}">
+        <td ng-click="toggler($event, 'row')">
+
+            <div class="expandable-icon">
+                <icon type="expand"></icon>
+                <icon style="display:none" type="collapse"></icon>
+            </div>
+
+            <h4>Collision</h4>
+
+            <p>Protect you and any property if you’re ever at fault in an accident. Leased or financed vehicles require
+                Comprehensive protection.</p>
+            <a href="">How much coverage do I need?</a>
+        </td>
+        <td>
+            <div class="styled-select">
+                <select ng-disabled="vehicles[$index].comprehensive == 'false'">
+                    <option>I accept</option>
+                    <option>I decline</option>
+                </select>
+            </div>
+            <p class="footnote">Your current policy is $2,500 deductible</p>
+        </td>
+        <td>
+            <h4>$118.50</h4>
+        </td>
+    </tr>
+
+    <tr class="collapsed-content" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" data-parent="rowTwo-{{price}}-{{($index+1)*9}}">
+        <td colspan="4">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <h4>Choosing the right level of coverage</h4>
+
+                    <p>This is an area where the customer could read about scenarios where the different coverages amounts
+                        are important. Ullam velit odio, vehicula eu auctor ut, volutpat sed turpis.</p>
+                    <ul>
+                        <li>Choose $100,000 for lorem ipsum reason</li>
+                        <li>$200,000 will protect you for lorem reasons as well</li>
+                        <li>To ensure the best safety choose $300,000 lorem ipsum</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h4>People like you choose</h4>
+
+                    <div class="inline">
+                        <div class="pull-left" style="width: 88px; height: 88px">
+                            <icon type="pie" style="width: 88px; height: 88px"></icon>
+                        </div>
+                        <p><strong>80%</strong> of people with your same car choose $100,00/$200,000</p>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <tr class="expandable" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" id="rowThree-{{price}}-{{($index+1)*9}}">
+        <td ng-click="toggler($event, 'row')">
+
+            <div class="expandable-icon">
+                <icon type="expand"></icon>
+                <icon style="display:none" type="collapse"></icon>
+            </div>
+
+            <h4>Towing</h4>
+
+            <p>Get towing assistance in case of breakdown.</p>
+            <a href="">How much coverage do I need?</a>
+        </td>
+        <td>
+            <div class="styled-select">
+                <select ng-disabled="vehicles[$index].comprehensive == 'false'">
+                    <option>I accept</option>
+                    <option>I decline</option>
+                </select>
+            </div>
+            <p class="footnote">Your current policy is $1,000 deductible</p>
+        </td>
+        <td>
+            <h4>$20.00</h4>
+        </td>
+    </tr>
+
+    <tr class="collapsed-content" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" data-parent="rowThree-{{price}}-{{($index+1)*9}}">
+        <td colspan="4">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <h4>Choosing the right level of coverage</h4>
+
+                    <p>This is an area where the customer could read about scenarios where the different coverages amounts
+                        are important. Ullam velit odio, vehicula eu auctor ut, volutpat sed turpis.</p>
+                    <ul>
+                        <li>Choose $100,000 for lorem ipsum reason</li>
+                        <li>$200,000 will protect you for lorem reasons as well</li>
+                        <li>To ensure the best safety choose $300,000 lorem ipsum</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h4>People like you choose</h4>
+
+                    <div class="inline">
+                        <div class="pull-left" style="width: 88px; height: 88px">
+                            <icon type="pie" style="width: 88px; height: 88px"></icon>
+                        </div>
+                        <p><strong>80%</strong> of people with your same car choose $100,00/$200,000</p>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <tr class="expandable" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" id="rowFour-{{price}}-{{($index+1)*9}}">
+        <td ng-click="toggler($event, 'row')">
+
+            <div class="expandable-icon">
+                <icon type="expand"></icon>
+                <icon style="display:none" type="collapse"></icon>
+            </div>
+
+            <h4>Car Rental (per day/total)</h4>
+
+            <p>Get a rental car whenever your car is out for repairs.</p>
+            <a href="">How much coverage do I need?</a>
+        </td>
+        <td>
+            <div class="styled-select">
+                <select ng-disabled="vehicles[$index].comprehensive == 'false'">
+                    <option>$30/day, $900 max</option>
+                    <option>$50/day, $1200 max</option>
+                </select>
+            </div>
+            <p class="footnote">Your current policy is $1,000 deductible</p>
+        </td>
+        <td>
+            <h4>$11.70</h4>
+        </td>
+    </tr>
+
+    <tr class="collapsed-content" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}" data-parent="rowFour-{{price}}-{{($index+1)*9}}">
+        <td colspan="4">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <h4>Choosing the right level of coverage</h4>
+
+                    <p>This is an area where the customer could read about scenarios where the different coverages amounts
+                        are important. Ullam velit odio, vehicula eu auctor ut, volutpat sed turpis.</p>
+                    <ul>
+                        <li>Choose $100,000 for lorem ipsum reason</li>
+                        <li>$200,000 will protect you for lorem reasons as well</li>
+                        <li>To ensure the best safety choose $300,000 lorem ipsum</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h4>People like you choose</h4>
+
+                    <div class="inline">
+                        <div class="pull-left" style="width: 88px; height: 88px">
+                            <icon type="pie" style="width: 88px; height: 88px"></icon>
+                        </div>
+                        <p><strong>80%</strong> of people with your same car choose $100,00/$200,000</p>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+    </tr>
+
+</tbody>
+
+<tfoot class="subtotal">
+    <tr>
+        <td colspan="2"><h4>Subtotal</h4></td>
+        <td><h4>$0.00</h4></td>
+    </tr>
+</tfoot>
+
+</table>
+
+<div class="panel-group visible-xs">
+
+    <div class="panel-default">
+
+        <div class="panel-heading">
+
+            <h4 class="panel-title">
+                {{vehicles[$index].make}} <span class="light">{{vehicles[$index].model}} {{vehicles[$index].trim}}</span>
+            </h4>
+
+            <a class="expand" href="#"><u>Edit or Remove</u></a>
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="item">
+
+                <h5>Comprehensive<icon class="inline" type="help" data-toggle="modal" data-target="#mobileModal"></icon>
+                </h5>
+                <span class="price">$0</span>
+
+                <div class="full clearfix">
+                    <div class="styled-select">
+                        <select>
+                            <option value="false">I decline</option>
+                            <option value="true">I agree</option>
+                        </select>
+                    </div>
+                    <p class="footnote">Your current policly is $1,000 deductible</p>
+                </div>
+
+            </div>
+
+            <div class="item" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}">
+
+                <h5>Collision<icon class="inline" type="help" data-toggle="modal" data-target="#mobileModal"></icon></h5>
+                <span class="price">$118.50</span>
+
+                <div class="full clearfix">
+                    <div class="styled-select">
+                        <select >
+                            <option value="true">I agree</option>
+                            <option value="false">I decline</option>
+                        </select>
+                    </div>
+                    <p class="footnote">Your current policly is $1,000 deductible</p>
+                </div>
+
+            </div>
+
+            <div class="item" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}">
+
+                <h5>Towing<icon class="inline" type="help" data-toggle="modal" data-target="#mobileModal"></icon></h5>
+                <span class="price">$0</span>
+
+                <div class="full clearfix">
+                    <div class="styled-select">
+                        <select ng-disabled="vehicles[$index].comprehensive == 'false'">
+                            <option value="">I decline</option>
+                            <option value="">I agree</option>
+                        </select>
+                    </div>
+                    <p class="footnote">You current policy has towing</p>
+                </div>
+
+            </div>
+
+            <div class="item" ng-class="{'inactive': vehicles[$index].comprehensive == 'false'}">
+                <h5>Car Rental (per day/total) <icon class="inline" type="help" data-toggle="modal" data-target="#mobileModal"></icon>
+                </h5>
+                <span class="price">$0</span>
+
+                <div class="full clearfix">
+                    <div class="styled-select">
+                        <select ng-disabled="vehicles[$index].comprehensive == 'false'">
+                            <option value="">I decline</option>
+                            <option value="">I agree</option>
+                        </select>
+                    </div>
+                    <p class="footnote">Your current policy is $30/day, $900 max</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h4>Subtotal $0.00</h4>
+    </footer>
+
+</div>

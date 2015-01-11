@@ -1,0 +1,98 @@
+<div id="purchase_confirm" class="col-md-12 pad-all-0">
+
+    <header id="info_link" class="hidden-xs hidden-sm">
+        <a href="#" class="pull-right">How We Use This Info <icon class="icon" type="help"></icon></a>
+    </header>
+
+    <!-- vehicle list for purchase/confirm -->
+    <form class="form-horizontal" name="purchaseConfirmForm" autocomplete="off">
+        <div class="row vehicle-confirm-list clearfix pad-all-0" ng-repeat="vehicle in vehicles">
+
+            <header class="clearfix pad-all-0">
+                <div class="col-md-12 lockup-heading">
+
+                    <img class="car pull-left mar-right-30 hidden-xs hidden-sm" ng-src="assets/images/{{vehicle.image}}">
+
+                    <div>
+                        <small>Vehicle {{$index + 1}}</small>
+                        <h2><strong>{{vehicle.data.year}} {{vehicle.data.make}}</strong> <span class="light">{{vehicle.data.model}} {{vehicle.data.trim}}</span></h2>
+                    </div>
+
+                </div>
+            </header>
+
+            <section class="pad-all-0">
+
+                <!-- vin -->
+                <ng-form name="vinFieldForm">
+                    <div class="form-group" ng-class="{ 'has-error' : vinFieldForm.vin_number.$dirty && vinFieldForm.vin_number.$invalid }">
+                        <label class="col-sm-6 control-label">Vehicle Identification Number (VIN) <icon class="label-icon" type="help"></icon></label>
+                        <div class="col-sm-4">
+                            <input name="vin_number"
+                                type="text"
+                                class="form-control"
+                                maxlength="17"
+                                ng-model="vehicle.data.vin"
+                                ng-minlength="17"
+                                required />
+                            <input-validation-message expression="vinFieldForm.vin_number.$dirty && vinFieldForm.vin_number.$invalid" message="'Please enter a valid, 17 digit vin number'"></input-validation-message>
+                        </div>
+                    </div>
+                </ng-form>
+
+                <!-- vehicle type -->
+                <ng-form name="vehicleTypeForm">
+                    <div class="form-group" ng-class="{ 'has-error' : vehicleTypeForm.newOrUsed.$dirty && vehicleTypeForm.vehicle_type.$invalid }">
+                        <label class="col-sm-6 control-label">Your vehicle at the time of purchase</label>
+                        <div class="col-sm-4">
+                            <!--<div style="width: 80px;">-->
+                                <div class="styled-select">
+                                    <select name="newOrUsed" ng-model="vehicle.data.newOrUsed" required>
+                                        <option value="">Select</option>
+                                        <option value="NEW">New</option>
+                                        <option value="USED">Used</option>
+                                    </select>
+                                </div>
+                            <!--</div>-->
+
+                        </div>
+                    </div>
+                </ng-form>
+
+                <!-- purchase / lease date -->
+                <ng-form name="purchaseDateForm">
+                    <div class="form-group" ng-class="{ 'has-error' : purchaseDateForm.purchase_date.$dirty && purchaseDateForm.purchase_date.$invalid }">
+                        <label class="col-sm-6 control-label">Purchase / lease date</label>
+                        <div class="col-sm-6 input-specify">
+                            <div class="wrapper">
+                                <input name="purchase_date"
+                                    type="date"
+                                    class="form-control"
+                                    ng-model="vehicle.data.purchaseDate"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+                </ng-form>
+
+            </section>
+
+        </div>
+
+        <footer class="row">
+
+            <!-- desktop footer -->
+            <div class="col-md-12 hidden-sm hidden-xs">
+                <button href="" class="btn primary wide" ng-disabled="purchaseConfirmForm.$invalid" ng-click="continueClick();">continue</button> We'll <strong>confirm your drivers</strong>
+            </div>
+
+            <!-- mobile footer -->
+            <div class="hidden-md hidden-lg">
+                <p>We'll <strong>confirm your drivers</strong> next</p>
+                <a href="#" class="btn primary">continue</a>
+            </div>
+        </footer>
+
+    </form>
+
+</div>

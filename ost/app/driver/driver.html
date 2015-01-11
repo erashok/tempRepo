@@ -1,0 +1,20 @@
+<div id="driver_detail" class="col-md-12 pad-all-0" ng-init="driverNum = 1">
+
+    <!-- details form -->
+    <div ng-include="'driver/_partials/_driver_detail_form.html'"></div>
+
+    <footer class="inner-page-footer col-xs-12 col-xs-12">
+        <!-- desktop footer -->
+        <div class="hidden-xs">
+            <a href="" ng-click="continueClick();" class="btn primary wide">Continue</a>
+            &nbsp; We'll work on your <strong>additional drivers</strong> next
+        </div>
+
+        <!-- mobile footer -->
+        <div class="col-xs-12 visible-xs pad-all-0">
+            <p>We'll work on your <strong>additional drivers</strong> next</p>
+            <a href="" ng-click="continueClick();" class="btn primary wide">Continue</a>
+        </div>
+    </footer>
+
+</div>

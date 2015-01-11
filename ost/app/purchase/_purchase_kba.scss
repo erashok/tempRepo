@@ -1,0 +1,35 @@
+#purchase_knowledge_based_auth {
+
+  #associated_address {
+    margin-bottom: 40px;
+  }
+
+  #associated_phone_numbers,
+  #associated_address {
+
+    margin-top: 60px;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+
+        strong {
+          color: $mid-grey;
+        }
+
+      }
+    }
+  }
+
+  footer {
+    border-top: solid 1px $light-grey;
+  }
+
+}

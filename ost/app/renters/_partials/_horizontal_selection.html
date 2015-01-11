@@ -1,0 +1,55 @@
+
+    <section class="horizontal_selection col-xs-12 col-sm-12 col-md-12 well info outer_well">
+        <div class="col-xs-12 col-sm-12 col-md-8 cta-container well normal inner_well">
+
+            <div class="auto_option col-md-6 col-sm-6 col-xs-12 option">
+                <h4>Auto Insurance</h4>
+                <div class="price price-lg">
+                    <sup>$</sup>{{price}}<sup>*</sup><sub>/month</sub>
+                </div>
+                <p class="footnote">Effective <a><u>10/26/2014</u></a>  <icon class="caret-dd" type="carrot_footer"></icon></p>
+
+                <hr>
+
+                <h4><sup>*</sup>${{price/10 | number:0}}.35 in savings per month</h4>
+                <p class="footnote">Included in your quote</p>
+
+                <a><u>See all discounts</u></a>
+
+                <br>
+
+                <button class="btn basic btn-sm" ng-click="toggleSelection($event)">Remove</button>
+
+            </div>
+
+            <div class="renters_option col-md-6 col-sm-6 col-xs-12 option">
+                <h4>Renter's Insurance</h4>
+                <div class="price price-lg">
+                    <sup>$</sup>{{price/14 | number:0}}<sup>*</sup><sub>/month</sub>
+                </div>
+                <p class="footnote">Effective <a><u>10/26/2014</u></a>  <icon class="caret-dd" type="carrot_footer"></icon></p>
+
+                <hr>
+
+                <h4><sup>*</sup>${{(price/14) - 1 | number:0}}.85 in savings per month</h4>
+                <p class="footnote">Included in your quote</p>
+
+                <a><u>See all discounts</u></a>
+
+                <br>
+
+                <button class="btn basic btn-sm" ng-click="toggleSelection($event)">Remove</button>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 cta-container policy">
+            <!-- col 3 -->
+            <div class="purchase_cta">
+                <h3>Purchase Policy</h3>
+                <button class="btn primary large">Continue to Purchase</button>
+
+                <p>Or call <strong>1-800-422-4272</strong></p>
+            </div>
+        </div>
+    </section>

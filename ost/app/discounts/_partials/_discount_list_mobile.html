@@ -1,0 +1,16 @@
+<div id="discounts_callout">
+    <div class="well note">
+        <header>
+            <h4>Your discounts <div class="counter">12</div></h4>
+        </header>
+        <div id="view_all_discounts">
+            <icon class="inline" type="expand"></icon>&nbsp;<a data-toggle="modal" data-target="#discountsModal" id="view_all_discounts_link">View all discounts</a>
+        </div>
+    </div>
+</div>
+
+<!-- discount modal list for mobile -->
+<div class="modal fade" id="discountsModal" tabindex="-1" role="dialog" aria-labelledby="discountsModal" aria-hidden="true">
+    <div ng-include="'/discounts/_partials/_discount_modal_content.html'"></div>
+</div>
+

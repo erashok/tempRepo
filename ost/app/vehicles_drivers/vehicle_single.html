@@ -1,0 +1,113 @@
+<div id="vehicle_detail" class="clearfix">
+
+    <header class="details-header">
+        <div id="driver_avatar" class="col-md-1">
+            <img class="car" src="assets/images/{{currentVehicle.image}}">
+        </div>
+        <div id="driver_name" class="col-md-5">
+            <h3><strong>{{currentVehicle.year}} {{currentVehicle.make}}</strong> {{currentVehicle.model}} {{currentVehicle.trim}}</h3>
+        </div>
+        <div id="driver_count" class="col-md-6">
+            <small class="pull-right">Vehicle {{vehicleIndex+1}} of {{vehicles.length}}</small>
+        </div>
+    </header>
+
+    <section id="vehicle_detail_form">
+
+        <h3>A few questions about your car</h3>
+
+        <!-- car info -->
+        <div class="form-group">
+            <label class="full">How did you purchase the car?</label>
+
+            <label class="radio-inline">
+                <input type="radio"> Paid For
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> Financed
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> Leased
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> Other
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="full">Where do you park this car at night?</label>
+
+            <label class="radio-inline">
+                <input type="radio"> In my garage
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> In a carport
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> On the street
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio"> Off the street
+            </label>
+        </div>
+
+        <h3>Now tell us about the cars safety features</h3>
+        <p>We offer discounts for certain safety features. Select all that appy.</p>
+
+        <div class="form-group no-border clearfix">
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    <input type="radio"> Anti-lock brakes
+                </label>
+                <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin libero non leo consequat, ac placerat nisi placerat Nullam. Velit odio, vehicula eu auctor ut, volutpat sed turpis. Felis nulla consequat qua"></icon>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> Driver airbags
+                </label>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> Driver side only airbag
+                </label>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> Automatic seat belts
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    <input type="radio"> Daytime running lights
+                </label>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> Anti-theft alarm
+                </label>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> VIN etched into the glass
+                </label>
+                <br/>
+                <label class="radio-inline">
+                    <input type="radio"> Electronic recovery device
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label class="radio-inline">
+                    <input type="radio"> Enrolled in Combat Auto Theft Program
+                </label>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="col-md-12">
+        <button class="btn primary wide" ng-click="nextVehicle()">Continue</button>
+        &nbsp; We'll work on your <strong>second vehicle</strong> next
+    </footer>
+
+</div>

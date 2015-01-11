@@ -1,0 +1,38 @@
+<div class="accordion-wrap">
+
+    <div id="checking_well" class="accordion-well well warning">
+        <icon class="icon" type="alert_flag_orange"></icon> $190 (auto) + $10 (renters) will be charged monthly
+    </div>
+
+    <form name="accordion_form">
+
+        <ng-form name="accountTypeForm">
+            <div class="mar-all-0 pad-all-0">
+                <label class="full">Account Type</label>
+                <select ng-model="paymentForm.checking.account_type">
+                    <option value="checking">Checking</option>
+                    <option value="savings">Savings</option>
+                </select>
+            </div>
+        </ng-form>
+
+        <ng-form name="routingNumberForm">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Routing Number</label>
+                <input class="col-sm-8 col-md-8" type="text" ng-model="paymentForm.checking.routing_number"/>
+            </div>
+        </ng-form>
+
+        <ng-form name="accountNumberForm">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Account Number</label>
+                <input class="col-sm-8 col-md-8" type="text" ng-model="paymentForm.checking.account_number"/>
+            </div>
+        </ng-form>
+
+        <div class="icon-check-helper">
+            <img src="/assets/images/icons/icon_check_helper.svg" alt=""/>
+        </div>
+
+    </form>
+</div>

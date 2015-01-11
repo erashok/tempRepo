@@ -1,0 +1,38 @@
+@mixin mobile_label15px() {
+  font-size: 15px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.checkbox {
+  label {
+    @include mobile_label15px;
+  }
+}
+
+.radio {
+  label {
+    @include mobile_label15px;
+  }
+}
+
+label.checkbox,
+label.checkbox-inline,
+label.radio,
+label.radio-inline {
+  @include mobile_label15px;
+}
+
+select {
+  @include mobile_label15px;
+}

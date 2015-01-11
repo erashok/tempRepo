@@ -1,0 +1,24 @@
+<div class="modal fade" id="driverModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" data-dismiss="modal"><icon type="close"></icon></div>
+                <h4 class="modal-title">Add A Driver</h4>
+            </div>
+            <div class="modal-body">
+
+                <label class="full">Name</label>
+                <input type="text" placeholder="First Name" ng-model="driver.firstName">
+                <input type="text" placeholder="Last Name" ng-model="driver.lastName">
+
+                <label class="full">Birthday</label>
+                <input type="date" placeholder="MM/DD/YYYY" ng-model="driver.birthDate">
+                <a href="">Why do you need this?</a>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn primary wide pull-left" ng-click='addDriver(driver)'>Add Driver</button>
+            </div>
+        </div>
+    </div>
+</div>

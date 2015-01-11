@@ -1,0 +1,48 @@
+<div id="purchase_adjustments" class="col-md-12 pad-all-0">
+
+    <div class="row pad-all-0">
+
+        <!-- new premium call out (mobile) -->
+        <div class="row pad-top-0 col-md-4 hidden-md hidden-lg" ng-include="'/purchase/_partials/_liar_liar_callout.html'"></div>
+
+        <!-- adjustments list -->
+        <div id="adjustment_list" class="main-content col-md-8">
+            <header id="list_header">
+                <h2 class="mar-all-0">We've updated the driving history for:</h2>
+            </header>
+
+            <section class="pad-all-0">
+                <div class="updates_list" ng-repeat="driver in drivers">
+                    <h4><icon class="icon" type="progress_checked"></icon>&nbsp; {{driver.data.firstName}} {{driver.data.lastName}}</h4>
+                </div>
+            </section>
+
+            <hr class="hidden-lg hidden-md"/>
+
+            <section id="list_desc pad-all-0">
+                <h4 class="green">Why was this change made?</h4>
+                <p><strong>We're required by the state of New York to verify the info you provide. Often the information on record can be different then what you have provided, which can affect the premium amount.</strong></p>
+                <p class="footnote">MetLife can provide you with an updated driving history. To speak to an agent: 1-800-987-6543</p>
+            </section>
+        </div>
+
+        <!-- new premium call out (desktop) -->
+        <div class="col-md-4 hidden-xs hidden-sm" ng-include="'/purchase/_partials/_liar_liar_callout.html'"></div>
+
+    </div>
+
+    <footer class="row">
+
+        <!-- desktop footer -->
+        <div class="col-md-12 hidden-sm hidden-xs">
+            <a href="" ng-click="continueClick();" class="btn primary wide">continue</a>&nbsp; &nbsp;We'll <strong>collect your payment info</strong> next
+        </div>
+
+        <!-- mobile footer -->
+        <div class="hidden-md hidden-lg">
+            <p>We'll <strong>collect your payment info</strong> next</p>
+            <a href="#" class="btn primary">continue</a>
+        </div>
+    </footer>
+
+</div>

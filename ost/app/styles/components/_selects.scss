@@ -1,0 +1,97 @@
+// select component
+// components/ui/components/_selects.scss
+
+// primary mixin
+@mixin selects {
+  select {
+    @include select (white);
+    &.primary {@include select(white); }
+
+  }
+
+  select.multiselect{
+    background: none !important;
+  }
+}
+
+// select mixin
+@mixin select($bg-color) {
+  // may need to target only webkit browsers
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand { display: none; }
+  @include button(black, white, white);
+  box-shadow: inset 0px -1px 0px $button-border;
+  border-radius: 4px;
+  outline: none;
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid $button-border;
+  padding: 14px 30px 14px 14px;
+  color: $dark-grey;
+  text-transform: none;
+  text-shadow: none;
+  background: #FFF url("../../assets/images/icons/icon_dropdown_carrot.svg") no-repeat right 15px center;
+}
+
+label + select{
+  margin-top: 5px;
+}
+
+.stacked label{
+  width: 100%;
+}
+
+.styled-select {
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+select:focus { outline: none; }
+
+.styled-select select {
+  border: 1px solid $button-border;
+}
+
+body.ie9{
+  .styled-select{
+    overflow: hidden;
+    select {
+      width: auto;
+      background-image: none;
+    }
+  }
+}
+
+@-moz-document url-prefix(){
+
+  .styled-select{
+    overflow: hidden;
+    border: 1px solid $button-border;
+    border-radius: 3px;
+    select {
+      width: 110%;
+      border: none;
+      background: #FFF url("../../assets/images/icons/icon_dropdown_carrot.svg") no-repeat right 15% center;
+    }
+  }
+
+  .state-select{
+    .styled-select{
+      select{
+        width: 120%;
+      }
+    }
+  }
+
+}
+
+/* hack to fall back in opera */
+_:-o-prefocus, .selector {
+  .styled-select { background: none; }
+}

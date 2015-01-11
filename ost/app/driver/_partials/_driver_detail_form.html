@@ -1,0 +1,150 @@
+<section id="driver_detail_form" class="pad-all-0">
+
+    <form name="driver_detail">
+
+    <!-- vehicle info -->
+    <!--<div class="form-group clearfix">-->
+        <!--<div class="col-md-12 pad-all-0">-->
+            <!--<label class="full">Which vehicle does {{driver.firstName}} drive most often?</label>-->
+            <!--<div class="pad-all-0 col-xs-12 col-sm-3 col-md-2">-->
+                <!--<div class="styled-select">-->
+                    <!--<select ng-model="driver.primaryVehicle">-->
+                        <!--<option ng-repeat="vehicle in vehicles" value="{{vehicle.data.vehicleId}}"> {{vehicle.data.vehicleId}} {{vehicle.data.year}} {{vehicle.data.make}} {{vehicle.data.model}} {{vehicle.data.trim}}</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<p class="footnote">When you drive more than 1 vehicle, we like to know which one you drive most frequently. It helps us create an accurate quote to protect you in the best way.</p>-->
+    <!--</div>-->
+
+    <!-- gender -->
+    <div class="form-group clearfix no-border">
+        <div class="col-md-12 pad-all-0">
+            <label class="full">Gender</label>
+            <label class="col-xs-12 col-sm-1 col-md-1 radio-inline">
+                <input type="radio" name="gender" id="gender1" ng-model="driver.gender" value="MALE"> Male
+            </label>
+            <label class="col-xs-12 col-sm-2 col-md-2 radio-inline">
+                <input type="radio" name="gender" id="gender2" ng-model="driver.gender" value="FEMALE"> Female
+            </label>
+        </div>
+    </div>
+
+     <!--marital status-->
+    <div class="form-group clearfix no-border">
+        <div class="col-md-12 pad-all-0">
+            <label class="full">Marital Status</label>
+            <div class="pad-all-0 col-xs-12 col-sm-3 col-md-2">
+                <div class="styled-select">
+                    <select ng-model="driver.maritalStatus">
+                        <option value="">Select</option>
+                        <option value="MARRIED">Married</option>
+                        <option value="SINGLE">Single</option>
+                        <option value="DIVORCED">Divorced</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- email -->
+    <div class="form-group clearfix">
+        <div class="col-md-12 pad-all-0">
+            <label class="full">Email</label>
+            <input type="text" placeholder="Your Email" ng-model="driver.email" class="col-xs-12 col-sm-6 col-md-6"/>
+        </div>
+        <p class="footnote">We’ll never share this information with third parties. This will just be used to communicate information about your quote.</p>
+    </div>
+
+    <!-- primary residence -->
+    <!--<div class="form-group clearfix no-border">-->
+        <!--<div class="col-md-12 pad-all-0">-->
+            <!--<label class="full">Primary Residence Type</label>-->
+            <!--<div class="pad-all-0 col-xs-12 col-sm-3 col-md-2">-->
+                <!--<div class="styled-select">-->
+                    <!--<select>-->
+                        <!--<option>Select</option>-->
+                        <!--<option>Apartment </option>-->
+                        <!--<option>Home - Lease </option>-->
+                        <!--<option>Home - Own </option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+    <!-- length of residence -->
+    <!--<div class="form-group clearfix no-border">-->
+        <!--<div class="col-md-12 pad-all-0">-->
+            <!--<label class="full">How long have you lived at your current residence</label>-->
+            <!--<div class="pad-all-0 col-xs-12 col-sm-3 col-md-2">-->
+                <!--<div class="styled-select">-->
+                    <!--<select>-->
+                        <!--<option>Select</option>-->
+                        <!--<option>Under a Year </option>-->
+                        <!--<option>1 - 2 Years</option>-->
+                        <!--<option>3 - 5 Years </option>-->
+                        <!--<option>5 - 10 Years</option>-->
+                        <!--<option>10+ Years</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!-- current customer -->
+    <!--<div class="form-group clearfix">-->
+        <!--<div class="col-md-12 pad-all-0">-->
+            <!--<label class="full">Do you currently have a Home or Life Insurance policy with MetLife</label>-->
+            <!--<label class="col-xs-12 col-sm-1 col-md-1 radio-inline">-->
+                <!--<input type="radio" name="current_customer" value="true"> Yes-->
+            <!--</label>-->
+            <!--<label class="col-xs-12 col-sm-1 col-md-1 radio-inline">-->
+                <!--<input type="radio" name="current_customer" value="false"> No-->
+            <!--</label>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!-- driving experience -->
+    <div class="form-group clearfix no-border">
+        <div class="col-md-12 pad-all-0">
+            <label class="full">Age first Licensed</label>
+            <input type="number" class="col-xs-12 col-sm-3 col-md-3" size="5" placeholder="Age" ng-model="driver.ageLicensed"/>
+        </div>
+    </div>
+
+    <!-- driver history -->
+    <div class="form-group clearfix">
+        <div ng-include="'/driver/_partials/_driving_history_module.html'"></div>
+    </div>
+
+    <!-- customer benefits -->
+    <!--<div class="form-group clearfix">-->
+        <!--<div class="col-md-12 pad-all-0">-->
+            <!--<label class="full">You can get discounts for memberships and classes. Find all that apply.</label>-->
+
+            <!--<label class="control-label">What school did you go to? <icon class="help-icon-label" type="help"></icon></label>-->
+            <!--<input type="search" placeholder="Start typing now" size="40" class="col-xs-12 col-sm-3 col-md-3"><br>-->
+            <!--<p class="footnote">Example: University of California Berkeley</p>-->
+
+            <!--<label class="control-label">What groups are you a member of? <icon class="help-icon-label" type="help"></icon></label>-->
+            <!--<input type="search" placeholder="Start typing now" size="40" class="col-xs-12 col-sm-3 col-md-3"><br>-->
+            <!--<p class="footnote">Example: AAA</p>-->
+
+            <!--<label class="control-label">Save even more if you or your drivers qualify for our Good Student Discount. Select below <icon class="help-icon-label" type="help"></icon></label>-->
+            <!--<label class="checkbox" ng-repeat="driver in drivers">-->
+                <!--<input type="checkbox" name="good_student_1" value="true"> {{driver.fullname}}-->
+            <!--</label>-->
+
+            <!--<label class="control-label">Have you completed a driver's safety course in the past 3 years <icon class="help-icon-label" type="help"></icon></label>-->
+
+            <!--<label class="checkbox-inline">-->
+                <!--<input type="checkbox" id="inlineCheckbox1" value="option1"> Yes, I have-->
+            <!--</label>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    </form>
+
+</section>

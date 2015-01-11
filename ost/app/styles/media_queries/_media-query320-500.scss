@@ -1,0 +1,197 @@
+@media screen and (min-width: 320px) and (max-width: 500px) {
+
+  .summary-call-to-action {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  div.tab-content {
+    padding: 0 !important;
+  }
+
+  .nav-tabs {
+    display: none;
+  }
+
+  ul.nav-tabs > li {
+    display: none;
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  section {
+
+    & .card {
+      padding-left: 0;
+    }
+
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 32px;
+  }
+
+  footer {
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .row {
+    padding: 15px 0px 20px 0px !important;
+  }
+
+  .header {
+    height: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    
+    body#page_auto_quote & {
+	  height: auto;
+  	}
+
+    div#progress_bar{
+      top: 15px;
+    }
+
+    div#quick-links {
+      margin-right: 0;
+    }
+
+    & .section-text {
+      text-align: left;
+      margin-top: 10px;
+    }
+    
+    .title-snoopy-combo {
+	    padding-bottom: 23px !important;
+    }
+    
+  }
+
+  .modal-content {
+    & .modal-footer {
+      & #modal_mobile_close_button {
+        width: 100%;
+      }
+    }
+  }
+  .body-content{
+    padding: 0px 10px;
+  }
+
+  .footer{
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .btn {
+      width: 100%;
+    }
+
+    .row{
+      padding: 5px 0px;
+      margin-bottom: 0px;
+
+      .dropdown{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .all-caps{
+        font-size: 10px;
+        width: 100%;
+        float: left;
+      }
+
+      a{
+        &.call{
+          font-size: 15px;
+          font-family: $frutiger-light;
+          text-decoration: underline;
+        }
+      }
+
+      .saved-quote{
+        margin-top: 20px;
+        float: left !important;
+        p{
+          font-size: 15px;
+        }
+      }
+
+      &.copyright{
+
+        p{
+          font-size: 9px;
+          margin-bottom: -4px;
+          a{
+            font-size: 9px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .container{
+    padding: 0px;
+  }
+
+  div#progress_indicator{
+    @include x-transform(scale(0.7));
+    -webkit-transform-origin: 0px 0px;
+    -moz-transform-origin: 0px 0px;
+    -o-transform-origin: 0px 0px;
+    transform-origin: 0px 0px;
+  }
+
+  div#progress_bar {
+    position: relative;
+    top: 25px;
+    right: 5px;
+    clear: both;
+    padding: 0;
+
+    hr {
+      margin-bottom: 20px;
+      margin-top: 0px;
+      border-top: solid 1px #206db4;
+    }
+
+    & .workflow-item {
+      text-indent: -9999px;
+      margin: 0px 24px 0px 24px !important;
+      font-size: 0px !important;
+      width: 20px !important;
+    }
+
+    & .progress-line {
+      width: 265px !important;
+      left: 35px;
+    }
+
+    & .workflows {
+      margin-left: -20px !important;
+    }
+
+  }
+
+  .section-text {
+    margin: 0;
+  }
+
+  .body-content,
+  .tab-content {
+    margin-top: 0px;
+  }
+
+  @import "../typography-hotfix-mobile";
+
+}

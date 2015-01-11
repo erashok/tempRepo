@@ -1,0 +1,63 @@
+#purchase {
+
+  #purchase_callout {
+
+    ul{
+      list-style: square url("../assets/images/icon_check_list.png");
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 16px;
+      color: $dark-grey;
+      line-height: 40px;
+      margin-left: 5px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+
+      li {
+        padding-left: 12px;
+      }
+
+    }
+
+  }
+
+  #protection_info {
+    background: url("../assets/images/icons/icon_auto.svg") no-repeat;
+  }
+
+  #renters_info {
+    background: url("../assets/images/icons/icon_renters.svg") no-repeat;
+  }
+
+  .well{
+    padding: 10px 30px;
+
+    h3 {
+      margin-bottom: 0px;
+    }
+
+    p {
+      font-size: 16px;
+      color: $slate-grey;
+    }
+
+  }
+
+  .summary {
+    padding-left: 50px;
+  }
+
+  #save_notification {
+
+    img {
+      float: left;
+      width: 10%;
+      margin-top: 20px;
+    }
+    div {
+      float: left;
+      width: 90%;
+      padding-left: 30px;
+    }
+
+  }
+}

@@ -1,0 +1,484 @@
+// input components
+// components/_input.scss
+
+
+
+  .placeholder { color: $mid-grey; }
+
+  .radio label,
+  .checkbox label,
+  label.checkbox,
+  label.checkbox-inline,
+  label.radio,
+  label.radio-inline,
+  select{
+    font-family: $frutiger-bold;
+    font-size: 1em;
+    color: $mid-grey;
+    padding: 0;
+  }
+
+  .inline-radio{
+    label.checkbox{
+      width:auto;
+      float:left;
+    }
+    .help{
+      position: relative;
+      top: 16px;
+      left: 8px;
+    }
+  }
+
+  .form-group {
+
+    label {
+      & .help-icon-label {
+        position: relative;
+        top: 4px;
+        margin-left: 3px;
+      }
+    }
+
+    & .checkbox {
+
+      label {
+        padding-left: 30px;
+        text-indent: -30px;
+      }
+
+    }
+
+    & .radio {
+      padding: 0;
+
+      label {
+        padding-left: 30px;
+        text-indent: -30px;
+      }
+
+    }
+
+    & .radio-inline {
+      margin: 0px 30px 15px 0px;
+    }
+
+  }
+
+  .input-specify {
+
+    margin-top: 10px;
+    margin-bottom: 75px;
+
+    @media screen and (min-width: 320px) and (max-width: 500px) {
+
+      position: relative;
+      left: 8px;
+
+    }
+
+    & .wrapper {
+      input {
+        width: 170px !important;
+        position: absolute;
+      }
+    }
+
+    & .wrapper:before {
+      border: solid 1px #dfda70;
+      content: "Please specify";
+      background-color: #fffdd5;
+      padding: 29px 0px 0px 195px;
+      width: 94%;
+      position: absolute;
+      height: 79px;
+      top: -9px;
+      border-radius: 8px 8px 8px 8px;
+      left: 2px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+  }
+
+  *::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+    margin-top:-1px;
+    margin-bottom:-1px;
+  }
+
+  input{
+    &:disabled{
+      color: $light-grey;
+    }
+  }
+
+  label{
+
+//    small {
+//      padding-left: 35px;
+//    }
+
+    .inline {
+      position: relative;
+      left: 34px;
+      top: 2px;
+    }
+
+    & .label-icon {
+      margin: 0px 0px 0px 5px;
+      position: relative;
+      top: 3px;
+    }
+
+    &.full{
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+
+  .radio label{
+    margin-right: 40px;
+    line-height: 1em;
+  }
+
+  .radio.disabled label{
+    color: $light-grey;
+  }
+
+  input[type='search'],
+  input[type='tel'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='email'],
+  input[type='zip'],
+  input[type='number'],
+  input[type='text']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+    background-color: $form-bg;
+    color: $rich-dark-grey;
+    border-top: 2px solid $form-border;
+    border-left: 2px solid $form-border;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-radius: 0px;
+    font-family: $frutiger-reg;
+    font-weight: 500;
+    padding: 2px 10px 0px 10px;
+    height: 50px;
+    letter-spacing: -0.01em;
+    margin: 5px 30px 15px 0px;
+    font-size: 16px;
+
+    &.form-control:focus,
+    &:focus{
+      border: 2px solid $mid-blue;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    opacity: 0;
+    -webkit-transition-duration: 200ms;
+    &:checked {
+
+    }
+  }
+
+  input.search,
+  input[type='search']{
+    text-indent: 35px;
+    background: $form-bg url("../assets/images/icons/icon_search.svg") no-repeat 10px 12px;
+  }
+
+  .form-control:focus{
+
+  }
+
+  .custom-radio,
+  .custom-checkbox{
+    input[type='radio'],
+    input[type='checkbox'] {
+      opacity: 1
+    }
+  }
+
+  .custom-radio{
+    width: 30px;
+    height: 24px;
+    display: inline-table;
+    position: relative;
+    z-index: 1;
+    top:6px;
+    background: url("../assets/images/radio_off.svg") no-repeat;
+
+    &.selected{
+      position: relative;
+      background: url("../assets/images/radio_on.svg") no-repeat;
+      top:6px;
+    }
+
+
+    input[type="radio"]{
+      margin: 1px;
+      position: absolute;
+      z-index: 2;
+      cursor: pointer;
+      outline: none;
+      opacity: 0;
+      /* CSS hacks for older browsers */
+      //_noFocusLine: expression(this.hideFocus=true);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -khtml-opacity: 0;
+      -moz-opacity: 0;
+    }
+  }
+
+  .checkbox,
+  .custom-checkbox {
+    small {
+      display: block;
+      padding-left: 35px;
+    }
+  }
+
+  .checkbox{
+    .help{
+      position: relative;
+      left:0px;
+      top: 2px;
+    }
+  }
+
+  .form-horizontal{
+    .checkbox{
+      margin-bottom: 15px;
+    }
+  }
+
+  .custom-checkbox{
+    width: 30px;
+    height: 24px;
+    display: inline-table;
+    position: relative;
+    z-index: 1;
+    top:6px;
+    background: url("../assets/images/checkbox_off.svg") no-repeat;
+
+    &.selected{
+      position: relative;
+      background: url("../assets/images/checkbox_on.svg") no-repeat;
+      top:6px;
+    }
+
+    input[type="checkbox"]{
+      margin: 1px;
+      position: absolute;
+      z-index: 2;
+      cursor: pointer;
+      outline: none;
+      opacity: 0;
+      /* CSS hacks for older browsers */
+      //_noFocusLine: expression(this.hideFocus=true);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -khtml-opacity: 0;
+      -moz-opacity: 0;
+    }
+  }
+
+  .input-group{
+    input{
+      height: 45px;
+      padding: 0px 10px;
+      margin: 0px 0px 0px -2px;
+    }
+  }
+
+  select{
+    background-color: $form-bg;
+    color: $rich-dark-grey;
+    border-top: 2px solid $form-border;
+    border-left: 2px solid $form-border;
+    border-radius: 0px;
+    font-weight: 500;
+    padding: 10px;
+    letter-spacing: -1px;
+
+    &:disabled{
+      opacity: 0.5;
+    }
+
+    &:focus{
+      //border: 2px solid $mid-blue;
+      outline: none;
+    }
+
+  }
+
+  select.plain:before {
+    content: '/images/icons/icon_carrot_header.svg';
+  }
+
+  select.width-large {
+    width: 240px;
+  }
+
+  label.radio-inline{
+    margin-right: 30px;
+    color: $mid-grey;
+    font-size: 16px;
+  }
+
+  .help{
+    position: relative;
+//    left: -25px;
+//    top: 6px;
+  }
+
+  .popover{
+    //margin-left: -80px;
+    font-family: $frutiger-reg;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+    border: none;
+
+    &.bottom > .arrow{
+      //left: 80%;
+      border-bottom-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .popover-title{
+      background-color: #FFF;
+      border-bottom: none;
+      .close{
+        position: relative;
+        left: 5px;
+      }
+    }
+
+    .popover-content{
+      padding: 24px 29px;
+      font-size: 13px;
+      h4{
+        font-size: 14px;
+        margin-top: -10px;
+      }
+      p{
+        font-size: 13px;
+        line-height: 16px;
+        a{
+          font-family: $frutiger-reg;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  
+  .errorMessage {
+	  display: block;
+	  color: red;
+	  font-weight: bold;
+  }
+
+@-moz-document url-prefix() {
+  .input-specify:after {
+    padding: 27px 165px 25px 25px;
+  }
+
+  .radio input[type="radio"]{
+    margin-top:1px;
+  }
+
+  .radio label{
+    margin-top:10px;
+  }
+
+  .custom-checkbox{
+    top: -18px;
+    &.selected{
+      top: -18px;
+    }
+  }
+  .custom-radio{
+    top: -16px;
+    &.selected{
+      top: -16px;
+    }
+  }
+
+  .inline-radio{
+    .help{
+      top: 9px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 500px){
+  .styled-select select{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:0\0) {
+  /* IE9 and IE10 rule sets go here */
+
+  .custom-checkbox{
+    top: -16px;
+    &.selected{
+      top: -16px;
+    }
+  }
+  .custom-radio{
+    top: -16px;
+    &.selected{
+      top: -16px;
+    }
+  }
+
+  .input-group{
+    input[type="tel"]{
+      width: 150px;
+    }
+    button.btn{
+      margin-left: -4px;
+      margin-top: -6px;
+    }
+  }
+
+  .help{
+    top:-6px;
+  }
+
+  select:active,
+  select:focus,
+  select option{
+    background: none;
+  }
+}
+  @mixin checkbox{
+
+  }
+
+// input width helper classes
+input {
+  &.small {
+    width: 100px;
+  }
+
+  &.med {
+    width: 200px;
+  }
+
+  &.large {
+    width: 250px;
+  }
+}
+
+

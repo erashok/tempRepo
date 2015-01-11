@@ -1,0 +1,84 @@
+#purchase_confirm,
+#purchase_drivers {
+
+  .driver-confirm-list,
+  .vehicle-confirm-list {
+
+    header {
+      border-bottom: solid 1px $light-grey;
+      padding: 15px 0px 15px 0px;
+      margin-bottom: 54px;
+
+      .lockup-heading{
+        .avatar{float: left; margin-top: 21px;}
+        img{margin-top: 13px;}
+        small{font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif; }
+        h2{margin-top:10px;}
+      }
+
+    }
+    section {
+      border-bottom: solid 3px $dark-rule;
+      padding-bottom: 75px;
+    }
+
+  }
+
+  form {
+    label {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+    }
+
+    .input-group{
+      input{
+        margin: 0px 0px 0px 15px;
+      }
+    }
+
+  }
+
+  & .row:last-child {
+    section {
+      border-bottom: solid 1px $light-grey;
+    }
+  }
+
+  #info_link {
+    position: relative;
+    top: 64px;
+    a {
+      & .icon {
+        position: relative;
+        top: 3px;
+        margin-left: 5px
+      }
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    select {
+      width: 100%;
+    }
+
+    .vehicle-confirm-list {
+      header {
+        margin-bottom: 15px;
+
+        h2 {
+          font-size: 20px;
+          margin-top: 5px !important;
+        }
+
+        small {
+          color: $mid-grey;
+        }
+      }
+    }
+
+  }
+
+}

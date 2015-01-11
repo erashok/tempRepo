@@ -1,0 +1,22 @@
+<div id="renters_coverages">
+
+    <form class="form-horizontal" role="form">
+
+        <!-- start standard coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_standard_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <!-- start additional coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_additional_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <!-- start urgent situations coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_urgent_situations_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <footer class="row">
+            <button type="submit" class="btn primary wide" ng-disabled="yourInfoForm.$invalid">Continue</button>
+        </footer>
+
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<div id="header_home_nav" class="container">
+
+    <div class="header_internal_wrapper">
+        <!-- logo, progress and quick links -->
+
+        <div class="row">
+            <!-- logo -->
+            <div id="logo" class="col-md-2 col-sm-2 col-xs-2 pad-all-0">
+                <a class="logo" href="#/">MetLife Auto &amp; Home</a>
+            </div>
+
+            <!-- quick links -->
+            <div id="quick-links" class="col-md-3 col-sm-4 col-xs-10 pad-all-0">
+                <ul class="nav nav-pills pull-right">
+                    <li><a ng-href="#/pay"><u>Pay My Bill</u></a></li>
+                    <li><a ng-href="#/signin"> <icon fill="#FFFFFF" type="tiny_lock"></icon> <u>Sign In</u></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row snoopy">
+            <icon type="snoopy_car"></icon>
+        </div>
+
+        <!-- CTA -->
+        <div class="row homepage-cta">
+            <h1>{{title}}</h1>
+            <div class="well">
+                <form class="form-inline" name="zipCodeForm" ng-submit="lookupZip(zip)" autocomplete="off">
+                    <div class="form-group">
+
+                        <div class="tooltip top lower" role="tooltip" ng-show="zipCodeForm.zip.$error.pattern || zipCodeForm.zip.$error.minlength" >
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">
+                                Please enter 5 numbers
+                            </div>
+                        </div>
+
+                        <input type="text" placeholder="Zip Code" name="zip" ng-model="zip" ng-Minlength="5" ng-pattern="/^\-?\d+$/" maxlength="5"/>
+                        <button type="submit" class="btn primary" ng-click="startQuote(zip)">Get a Quote</button>
+                        <!-- x-ng-disabled="zipCodeForm.$invalid" -->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row other-options">
+            <a ng-href=""><u>Already started a quote?</u></a> &bull; <a ng-href=""><u>Find an Agent</u></a>
+        </div>
+
+    </div>
+
+</div>

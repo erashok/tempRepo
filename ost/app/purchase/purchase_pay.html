@@ -1,0 +1,58 @@
+<div id="purchase_pay" class="col-md-12 pad-all-0">
+
+    <div class="row pad-all-0">
+
+        <!-- accordions column -->
+        <div id="auto_policy_document_list" class="pad-all-0 col-sm-7 col-md-7">
+
+            <header>
+                <h2>Select payment method</h2>
+                <p>Anything necessary to explain payment rules. Lorem ipsum...</p>
+            </header>
+
+            <div ng-include="'/purchase/_partials/_purchase_pay_callout_mobile.html'" class="hidden-sm hidden-md hidden-lg"></div>
+
+            <!-- payment method list -->
+            <div id="payment_method_list" class="form-group">
+                <div class="radio">
+                    <label class="method" ng-repeat="method in paymentMethods">
+                        <input name="name" type="radio" value="{{method.value}}" ng-model="$parent.currentPaymentMethod">{{method.label}} <icon class="help" type="help" tabindex="100" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" data-content="Tooltip" ng-show="method.info"></icon><span ng-show="method.bestValue" class="label best-value-label">best value</span>
+                        <p class="footnote" ng-bind-html="method.description"></p>
+
+                        <div ng-show="$parent.currentPaymentMethod === paymentMethods[$index].value" class="payment-details">
+                            <!-- accordion partials found in: /purchase/_partials/accordions -->
+                            <div ng-include="method.accordion_url"></div>
+                        </div>
+
+                    </label>
+                </div>
+            </div>
+
+            <!-- e-signature -->
+            <section id="e_signature">
+                <header>
+                    <h2 class="mar-all-0">Please provide signature</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor facilisis fringilla. Maecenas maximus nunc sit amet justo tincidunt convallis. Proin bibendum accumsan augue, tincidunt ullamcorper libero semper sit amet. Duis rhoncus pellentesque dolor sit amet tincidunt.</p>
+                    <p><strong>By entering your name and clicking "Continue" you are e-signing this document and agreeing to its terms and conditions.</strong></p>
+                </header>
+
+                <div id="e_sig_form" class="form-group">
+                    <input type="text" placeholder="Your full name"/>
+                    <p class="pull-left footnote col-xs-12 col-sm-6 pad-all-0">Today's Date: October 16, 2014</p>
+                    <p id="sign_on_paper" class="col-xs-12 col-sm-6 pad-all-0"><a href="#">I'd prefer to sign on paper</a></p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- call out column -->
+        <div ng-include="'/purchase/_partials/_purchase_pay_callout_desktop.html'" class="hidden-xs"></div>
+
+    </div>
+
+    <footer class="row">
+        <p class="hidden-sm hidden-md hidden-lg">Get all the details for your new policy</p>
+        <button type="submit" class="btn primary wide">complete your purchase</button> <span class="hidden-xs">Get all the details for your new policy</span>
+    </footer>
+
+</div>

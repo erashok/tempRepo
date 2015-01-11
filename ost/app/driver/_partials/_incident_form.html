@@ -1,0 +1,48 @@
+<form class="form-inline">
+
+    <div class="row mar-all-0 pad-all-0">
+
+        <div class="form-group accident-claim-group">
+            <div class="styled-select">
+                <select ng-model="incident.category">
+                    <option value="">Category</option>
+                    <option value="ACCIDENT">Accident</option>
+                    <option value="CLAIM">Claim</option>
+                    <option value="VIOLATION">Violation</option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-if="incident.category == 'ACCIDENT'" class="form-group accident-claim-group">
+            <div class="styled-select">
+                <select ng-model="incident.type" ng-options="type.text for type in accidentTypes"></select>
+            </div>
+        </div>
+
+        <div ng-if="incident.category == 'VIOLATION'" class="form-group accident-claim-group">
+            <div class="styled-select">
+                <select ng-model="incident.type" ng-options="type.text for type in violationTypes"></select>
+            </div>
+        </div>
+
+        <div ng-if="incident.category == 'CLAIM'" class="form-group accident-claim-group">
+            <div class="styled-select">
+                <select ng-model="incident.type" ng-options="type.text for type in claimTypes"></select>
+            </div>
+        </div>
+
+        <div class="form-group accident-claim-group">
+            <input ng-model="incident.date" class="form-control mar-all-0" style="width: 180px;" type="date" placeholder="MM/DD/YY"/>
+        </div>
+
+        <div class="form-group accident-claim-group">
+            <button ng-click="addNewIncident(incident)" id="add_button" class="btn dark">add</button>
+        </div>
+
+        <div id="entry_delete_button" ng-show="showDeleteButton">
+            <a ng-click="deleteIncident()">Delete this entry</a>
+        </div>
+
+    </div>
+
+</form>

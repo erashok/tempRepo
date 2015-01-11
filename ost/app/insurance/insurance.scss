@@ -1,0 +1,21 @@
+#verify_insurance {
+
+  #current_insurance_details {
+
+    & .row {
+      margin: 0;
+      padding: 10px 0px 10px 0px;
+    }
+
+  }
+
+  #current_insurance_form {
+
+    label {
+      padding: 0;
+      margin: 0;
+    }
+
+  }
+
+}

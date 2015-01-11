@@ -1,0 +1,38 @@
+<section id="driver_confirmation" class="coverage-row col-md-12 pad-all-0">
+
+    <div class="row pad-all-0">
+        <header class="clearfix">
+            <h2>Your Drivers</h2>
+            <p>Confirm that the drivers listed below are correct</p>
+        </header>
+
+        <!-- driver views -->
+        <div ng-repeat="driver in drivers" class="driver_confirmation col-lg-4 col-md-4 col-sm-4">
+            
+            <div class="icon">
+                <icon type="avatar" width="27" height="28"></icon>
+            </div>
+            <div class="name">
+                <h3>{{driver.firstname}} {{driver.lastname}}</h3>
+                <a ng-hide="driver.primary == false"><u>Edit</u></a>
+                <a ng-hide="driver.primary == true"><u>Edit or remove</u></a>
+            </div>
+
+        </div>
+
+        <!-- add driver -->
+        <div class="driver_confirmation col-lg-4 col-md-4 col-sm-4">
+            <div class="icon">
+                <icon type="plus"></icon>
+            </div>
+            <div class="name">
+                <h4><a data-toggle="modal" data-target="#driverModal"><u>Add Another Driver</u></a></h4>
+            </div>
+        </div>
+
+        <!-- Driver Modal -->
+        <div ng-include="'/vehicles_drivers/_partials/_new_driver_modal.html'"></div>
+
+    </div>
+
+</section>

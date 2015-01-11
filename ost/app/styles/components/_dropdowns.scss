@@ -1,0 +1,114 @@
+// dropdown component
+// elements/_dropdowns.scss
+
+// primary mixin
+@mixin dropdown {
+
+  .dropdown{
+
+    .row{
+      text-align: center;
+      padding: 0px 30px;
+      width: 335px;
+    }
+
+    .dropdown-menu{
+      font-size: 14px;
+      border-radius: 6px;
+      border: none;
+      padding-bottom: 30px;
+
+      h4{
+        font-size: 22px;
+        margin-top: 5px;
+      }
+
+      .input-group{
+        margin: 0px auto;
+
+        input{
+          height: 47px;
+          margin: 0px;
+        }
+
+        .btn{
+          margin-left: -5px;
+          height: 47px;
+          margin-top: -2px;
+        }
+      }
+
+      span.all-caps{
+        font-size: 13px;
+        margin-bottom: 5px;
+        line-height: 30px;
+      }
+
+      hr{
+        margin: 18px 0px;
+      }
+
+      p{
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+
+      .arrow{
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        left: 50%;
+        margin-left: -11px;
+        border-top-width: 0;
+        border-bottom-color: #FFF;
+        border-width: 11px;
+      }
+
+      input[type="tel"]{
+
+      }
+    }
+
+  }
+
+  .header{
+    .dropdown{
+
+      .dropdown-menu{
+        left: -50%;
+        top: 60px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+        .arrow{
+          top: -22px;
+        }
+      }
+    }
+  }
+
+  .footer{
+    .dropdown{
+      a{
+        cursor: pointer;
+        font-size: 24px;
+        position: relative;
+        top: 8px;
+      }
+      .dropdown-menu{
+        top: -510px;
+        left: 12px;
+        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+
+        .arrow{
+          border-bottom-width: 0;
+          border-top-color: #FFF;
+          bottom: -11px;
+        }
+      }
+    }
+  }
+
+}

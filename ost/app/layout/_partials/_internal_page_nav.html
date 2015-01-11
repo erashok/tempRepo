@@ -1,0 +1,104 @@
+<div id="header_internal">
+	<div class="header_internal_wrapper">
+    <!-- logo, progress and quick links -->
+    <div class="row">
+
+        <!-- logo -->
+        <div class="col-xs-6 col-sm-2 col-md-2 pad-all-0">
+            <a class="logo" href="#/">MetLife Auto &amp; Home</a>
+        </div>
+
+        <!-- mobile phone number -->
+        <div class="col-xs-6 hidden-sm hidden-md hidden-lg pad-all-0">
+            <h5 class="header-phone-number"><icon type="phone"></icon>&nbsp;<a href="tel:18004224272">1-800-422-4272</a></h5>
+        </div>
+
+        <!-- progress -->
+        <div class="col-xs-6 col-sm-5 col-md-5 progress-group">
+            <div id="progress_indicator">
+                <div class="workflows">
+
+                    <div class="progress-line">
+                        <div class="progress-meter">&nbsp;</div>
+                    </div>
+
+                    <div style="position: absolute; text-align: center"
+                         ng-repeat="workflow in workflows"
+                         ng-class="{active: $index === selectedWorkflow, complete: $index < selectedWorkflow}"
+                         ng-style="{'left': $index * 25 + '%'}"
+                         class="workflow-item" >
+                        <div class="bullet">&nbsp;</div>
+                        <span class="hidden-xs workflow-label">{{workflow}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- quick links (desktop + tablet) -->
+        <div id="quick_links" class="col-xs-6 col-sm-3 col-md-3 hidden-xs">
+            <div class="dropdown hidden-xs hidden-s">
+
+                <div id="talk-to-agent" class="dropdown-toggle">
+                    <p>Need Help?</p>
+                    <a >Talk to an Agent</a><icon class="icon-carrot" type="carrot_header"></icon>
+                </div>
+
+                <div class="dropdown-menu" role="menu" aria-labelledby="talk-to-agent">
+                    <div class="arrow"></div>
+                    <div class="row">
+                        <span class="all-caps">Call Us Now</span>
+                        <h4 class="green">1-800-422-4272</h4>
+
+                        <hr>
+
+                        <span class="all-caps">Request a Call</span>
+
+                        <p>We'll call you when an agent is available</p>
+
+                        <div class="input-group">
+                            <input type="tel" size="15" placeholder="Phone Number" ng-pattern="/\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/">
+                            <button class="btn basic">Call Me</button>
+                        </div>
+
+                        <hr>
+
+                        <span class="all-caps">Chat with an Agent</span>
+
+                        <p>Get online help with a agent</p>
+                        <button class="btn dark">Chat with Agent</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- secure purchase -->
+    <div class="row secure-purchase-ribbon">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <!-- secure purchase icon/text for desktop/tablet -->
+            <div ng-show="secure">
+                <icon type="tiny_lock" fill="#FFF"></icon>
+                <strong class="secure-purchase">secure purchase</strong>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- page section title / snoopy -->
+    <div class="row pad-all-0 mar-all-0 title-snoopy-combo">
+
+        <!-- pg title -->
+        <div class="col-xs-9 col-sm-8 col-md-8 title-header pad-all-0">
+            <h1>{{title}}</h1>
+        </div>
+
+        <!-- snoopy -->
+        <div class="col-xs-3 col-sm-4 col-md-4 hidden-xs snoopy-icon" ng-class="{mobileSnoopy:showMobileSnoopy}">
+            <img ng-src="{{snoopy}}">
+        </div>
+    </div>
+
+	</div>
+</div>

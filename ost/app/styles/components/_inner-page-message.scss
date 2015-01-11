@@ -1,0 +1,115 @@
+@mixin inner-page-messages {
+  div.inner-page-message {
+
+    &.warning {
+      @include inner-page-message($warning-bg, $warning-border, true);
+      &:before{
+        background: url("../assets/images/icons/icon_alert_flag_orange.svg") no-repeat;
+      }
+    }
+
+    &.success {
+      @include inner-page-message($success-bg, $success-border, true);
+      &:before{
+        background: url("../assets/images/icons/icon_alert_check_green.svg") no-repeat;
+      }
+    }
+
+    &.error {
+      @include inner-page-message($error-bg, $error-border, true);
+      &:before{
+        background: url("../assets/images/icons/icon_alert_error_red.svg") no-repeat;
+      }
+    }
+
+    &.normal {
+      @include inner-page-message(#f7f7fa, #e0e2e6, false);
+    }
+
+  }
+}
+
+@mixin inner-page-message($bg-color, $border-color, $before) {
+
+  small {
+    &.count {
+      font-family: $frutiger-bold;
+      font-size: 14px;
+      color: #797979;
+    }
+  }
+
+  .details-header {
+
+      position: relative;
+      bottom: 10px;
+
+      .avatar {
+        display: inline-block;
+        margin: 0px 25px 0px 0px;
+        position: relative;
+        bottom: 15px;
+
+        &.driver {
+          margin-right: 30px;
+        }
+
+      }
+
+      .name {
+        display: inline-block;
+        h3 {
+          margin: 5px 0px 0px 0px;
+          font-family: $frutiger-light;
+        }
+      }
+  }
+
+  height: auto;
+  background-color: $bg-color;
+  border-bottom: solid 1px $border-color;
+  font-size: 20px;
+  padding-top: 30px;
+  padding-left: $page-padding + 20px;
+  padding-right: $page-padding;
+  letter-spacing: -1px;
+
+  &:before {
+    float: left;
+    height: 45px;
+    content: '';
+    display: inline-block;
+    width: 26px;
+    position: relative;
+    top: 0px;
+    left: -10px;
+  }
+
+  &:before{content: none};
+
+  b, strong{
+    font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+  }
+
+  /* iPhone */
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+    padding: 15px 20px;
+    font-size: 16px;
+
+    .details-header {
+      position: relative !important;
+      bottom: 0px !important;
+
+      &.driver {
+        margin-top: 15px
+      }
+
+    }
+
+    &:before {
+          margin: -5px 5px 0px 0px;
+        }
+
+  }
+
+}

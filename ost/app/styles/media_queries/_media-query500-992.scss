@@ -1,0 +1,19 @@
+@media screen and (min-width: 500px) and (max-width: 992px){
+  .header,
+  .body-content,
+  .footer{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  div#progress_bar,
+  .header-img{
+    display: none;
+  }
+
+  .header{
+    & .homepage-cta{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<div class="modal fade" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="close" data-dismiss="modal"><icon type="close"></icon></div>
+                <h4 class="modal-title" ng-if="!vehicle.year">Add A Vehicle</h4>
+                <h4 class="modal-title" ng-if="vehicle.year">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} {{vehicle.trim}}</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-3 pad-all-0">
+                        <label class="full">Year</label>
+
+                        <div class="styled-select">
+                            <select ng-model="vehicle.year" ng-change="getMakes(vehicle.year);">
+                                <option ng-repeat="year in years">{{year.value}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 pad-all-0">
+                        <label class="full">Make</label>
+
+                        <div class="styled-select">
+                            <select ng-model="vehicle.make" ng-disabled="makes.length == 0" ng-change="getModels(vehicle.year, vehicle.make);">
+                                <option ng-repeat="make in makes">{{make.value}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 pad-all-0">
+                        <label class="full">Model</label>
+
+                        <div class="styled-select">
+                            <select ng-model="vehicle.model" ng-disabled="models.length == 0" ng-change="getTrims(vehicle.year, vehicle.make, vehicle.model);">
+                                <option ng-repeat="model in models">{{model.value}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 pad-all-0">
+                        <label class="full">Body Style</label>
+
+                        <div class="styled-select">
+                            <select ng-model="vehicle.trim" ng-disabled="trims.length == 0" ng-change="">
+                                <option ng-repeat="trim in trims">{{trim.value}}</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="form-group row">
+
+                    <p>Have your VIN? We can look up your vehicle that way.</p>
+
+                    <button class="btn basic" ng-show="!vinExpand" ng-click="toggleVinExpand()">Add Vehicle With Vin</button>
+
+                    <form class="form-inline" name="vinNumberForm" ng-submit="lookupVin()">
+                        <div class="form-group">
+                            <div class="input-group" ng-show="vinExpand">
+                                <span ng-show="vinNumberForm.vinNumber.$error.minlength" class="errorMessage">Please enter 17 characters</span>
+
+                                <div class="row">
+
+                                    <div class="col-sm-4 pad-all-0">
+                                        <label class="full">Year</label>
+
+                                        <div class="styled-select">
+                                            <select ng-model="vinYear">
+                                                <option value="">Select</option>
+                                                <option ng-repeat="year in years">{{year.value}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 pad-all-0">
+                                        <label class="full">VIN</label>
+
+                                        <input type="text" placeholder="Your VIN" name="vin" ng-model="vehicle.vin" ng-minlength="17" maxlength="17" spellcheck="false" required />
+                                    </div>
+
+                                    <label class="full"></label>
+                                    <div class="col-sm-4 pad-all-0">
+                                        <button type="button" data-dismiss="modal" class="btn basic" ng-click="vinLookup(vehicle.vin, vinYear);" ng-disabled="vinNumberForm.$invalid" >Lookup Vehicle</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn primary wide pull-left" ng-click="addVehicle(vehicle)" ng-disabled="vehicle.trim == ''">Add Vehicle</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,628 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import '../styles/vendor/convenient_mixins.scss';
+@import '../styles/components/_animations.scss';
+
+/* Global Styles */
+@import "variables";
+@import "typography";
+@include frutiger;
+@import "helpers";
+
+html,body{width:100%;overflow-x:hidden; font-family: $frutiger-light;}
+
+/* Components */
+@import "components/buttons";
+@include buttons;
+
+@import "components/dropdowns";
+@include dropdown;
+
+@import "components/inputs";
+@include checkbox;
+
+@import "components/modals";
+@include modals;
+
+@import "components/selects";
+@include selects;
+
+@import "components/tabs";
+@include nav-tabs;
+
+@import "components/tables";
+@include tables;
+
+@import "components/wells";
+@include wells;
+
+@import "components/inner-page-message";
+@include inner-page-messages;
+
+@import "components/validation";
+@import "../layout/internal_header";
+
+@import "components/inline_form_box";
+
+@import "components/inner-page-footer";
+
+@import "grid_helpers";
+@import "../directives/vehicle-card/vehicle-card";
+
+/* Individual Pages */
+@import "../quote/quote.scss";
+@import "../home/home.scss";
+@import "../vehicles_drivers/vehicles_drivers";
+@import "../your_info/your_info";
+@import "../discounts/discounts";
+@import "../insurance/insurance";
+@import "../purchase/purchase";
+@import "../purchase/purchase_adjustments";
+@import "../purchase/purchase_complete";
+@import "../purchase/purchase_confirm";
+@import "../purchase/purchase_final";
+@import "../purchase/purchase_kba";
+@import "../purchase/purchase_overview";
+@import "../purchase/purchase_pay";
+@import "../renters/renters";
+@import "ie9";
+
+/* tags */
+
+ul.checkbox-list {
+
+  list-style: square url("../assets/images/icon_check_list.png");
+  font-size: 16px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  line-height: 30px;
+
+  &.normal {
+    font-family: $frutiger-reg;
+    color: #797979;
+  }
+
+  &.bold {
+    font-family: $frutiger-bold;
+    color: #333333;
+    line-height: 40px;
+  }
+
+}
+
+hr {
+  margin: 0;
+}
+
+ul.plain {
+
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+}
+
+hr {
+  margin-top: 32px;
+  margin-bottom: 36px;
+
+  &.divider {
+
+    border-top: solid 1px $light-grey;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+
+    &.bold {
+      border-top: solid 2px $mid-grey;
+    }
+
+  }
+
+}
+
+/* Custom page header */
+.body-content {
+  margin-top: 35px;
+}
+
+#header_home_nav,
+#header_internal_nav {
+  #logo {
+    z-index: 10;
+  }
+}
+
+header {
+  & .counter {
+    height: 22px;
+    width: 22px;
+    border-radius: 10px;
+    border: solid 2px $mid-blue;
+    color: $mid-blue;
+    font-size: 10px;
+    padding: 4px 0px 0px 3px;
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+  }
+}
+
+.header{
+  border-bottom: 3px solid #1e65a8;
+  background: $mid-blue;
+  height: 272px;
+  color: white;
+  position: relative;
+  z-index: 5;
+  
+  body#page_auto_quote & {
+	  height: 232px;
+  }
+
+  & .row:nth-child(1) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px !important;
+  }
+
+  &.xl {
+    height: 100%;
+  }
+
+  & .logo{
+    position: relative;
+    background: url("../assets/images/metlife_logo.svg") no-repeat;
+    width: 122px;
+    text-indent: -9000px;
+    display: block;
+    height: 50px;
+  }
+
+  & .snoopy {
+    @include center(175px);
+    height: 95px;
+    margin-top: 0px;
+  }
+
+  #talk-to-agent{
+    cursor: pointer;
+  }
+
+  a{
+    color: white;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+
+    u{
+      text-decoration: none;
+      border-bottom: 1px solid $link-underline-dark;
+    }
+  }
+
+  ul > li > a:hover{
+    background-color: transparent;
+  }
+
+  .icon{
+    position: relative;
+    left: 9px;
+    top: -3px;
+  }
+
+  .open{
+    .icon{
+      @include x-transform(rotate(180deg) translate3d(-87px, -2px, 0));
+    }
+  }
+
+  #progress_bar{
+    width: 100%;
+    position: relative;
+    top: -50px;
+
+    .workflows{
+      width: 575px;
+      margin: 0px auto;
+    }
+  }
+
+  #quick-links{
+    float: right;
+    //    margin-right: 65px;
+    margin-top: 10px;
+    z-index: 5;
+
+    h5{
+      color: white;
+      font-size: 14px;
+      margin-bottom: 5px;
+      margin-top: 0px;
+    }
+    a.dropdown-toggle{
+      font-weight: 700;
+      font-family: $frutiger-bold;
+      letter-spacing: -0.1em;
+      float: left;
+      cursor: pointer;
+      z-index: 10;
+      position: relative;
+    }
+
+    #head-snoop{
+      position: absolute;
+      right: 0px;
+    }
+
+  }
+
+  & .homepage-cta{
+    text-align: center;
+    @include center(758px);
+    margin-bottom: 0px;
+
+    h1 {
+      margin: 0;
+    }
+
+    button {
+      height: 50px;
+    }
+
+    input {
+      margin-right: 10px;
+    }
+
+    & .well{
+      background-color: #1a5aa1;
+      border-color: transparent;
+      width: 420px;
+      margin: 40px auto 0px auto;
+      height: 100px;
+      padding: 20px 0px 0px 0px;
+    }
+  }
+
+  & .other-options{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    a{
+      padding: 10px;
+    }
+  }
+
+}
+
+footer {
+  font-size: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  & .row{
+    padding: 40px 0px;
+    font-size: 22px;
+
+    a.wide, button.wide {
+      margin-right: 30px;
+    }
+  }
+
+  strong{
+    font-family: $frutiger-bold;
+    font-weight: normal;
+  }
+}
+
+.footer{
+  background-color: $footer-bg;
+  padding: 15px $page-padding;
+  border-top: 1px solid $rules;
+
+  &.home{
+    background-color: white;
+  }
+
+  .contact{
+    margin-bottom: 50px;
+    padding: 20px 0px;
+
+    .col-md-4{
+
+      h3.green{
+        margin: 10px 0px 10px 0px;
+      }
+
+      p{
+        margin: 10px 0px 15px 0px;
+      }
+
+      .input-group{
+        .btn{
+          margin-left: -5px;
+          height: 47px;
+          margin-top: 2px;
+        }
+      }
+
+      table.business-hours{
+
+        td{
+          color: $mid-grey;
+          font-size: 14px;
+          padding-bottom: 2px;
+
+          &.left{
+            text-align: left;
+            font-family: $frutiger-bold;
+            padding-right: 15px;
+          }
+          &.right{
+            text-align: right;
+            font-family: $frutiger-reg;
+          }
+        }
+      }
+    }
+  }
+
+  .dropdown {
+
+    a{
+      font-size: 22px;
+      margin-top: 5px;
+      cursor: pointer;
+      z-index: 10;
+      clear: left;
+
+      span {
+        border-bottom: 1px solid $link-underline;
+      }
+
+    }
+
+    .icon{
+      display: inline-block;
+      position: relative;
+      left: 9px;
+      top: -3px;
+    }
+
+    &.open{
+      .icon{
+        @include x-transform(rotate(180deg) translate3d(6px, -2px, 0));
+      }
+    }
+
+  }
+  .saved-quote{
+    p{
+      font-size: 16px;
+      font-family: $frutiger-light;
+    }
+  }
+
+  .copyright{
+
+    border-top: 1px solid $rules;
+    &.home{
+      border-top: none;
+    }
+
+    margin: 0px;
+    padding: 20px 0px;
+
+    p{
+      margin: 0 0 8px;
+      a{
+        font-size: 12px;
+        border-bottom: 1px solid $link-underline;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .disclaimer{
+    margin-top: 20px;
+    float: left;
+
+    .footnote{
+      width: 75%;
+      font-size: 12px;
+      margin-bottom: 10px;
+
+      &:before{
+        content: "†";
+        font-size: 0.9em;
+        margin-right: 2px;
+      }
+      &:nth-child(2){
+        &:before{
+          content: "‡";
+        }
+      }
+    }
+
+  }
+}
+
+.row{
+  margin: 20px 0px;
+  padding: 20px;
+
+  header{
+    margin-bottom: 30px;
+  }
+
+}
+.marketing{
+  border-bottom: 3px solid #CCC;
+}
+
+/* presentation */
+.section-divider {
+  border-top: solid 2px $mid-grey;
+}
+
+.header-img {
+  float: right;
+  //  padding-right: 100px;
+  margin-top: -60px;
+}
+
+.global-message {
+  //  height: 55px;
+  background-color: #0e3268;
+  width: 100%;
+  display: block;
+  position: fixed;
+  padding: 15px 0px 13px 40px;
+  color: white;
+  z-index: 11;
+  font-size: 22px;
+
+  overflow-y: hidden;
+  height: 77px;
+
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+  & .message-wrapper {
+    margin-top: 10px;
+
+    & .message-image {
+      margin-right: 5px;
+    }
+  }
+
+  &.closed {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: none;
+  }
+
+  strong {
+    &.message {
+      color: white;
+    }
+  }
+
+}
+
+#secure_purchase {
+  position: relative;
+  bottom: 30px;
+
+  strong {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    font-family: $frutiger-bold;
+  }
+
+}
+
+.state-select{
+  width:85px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.row {
+  header {
+    margin-bottom: 25px;
+  }
+
+  section {
+    margin-bottom: 10px;
+  }
+}
+
+.ovh {
+  overflow: hidden;
+}
+
+.modal-open {
+  position: fixed;
+}
+
+// centering content philosophy down to tablet.
+.header, .body-content, .footer, .global-message {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#header_internal {
+  width: 970px;
+  margin: 0 auto;
+  padding: 0;
+  //background: gold;
+
+	.header_internal_wrapper {
+		position: relative;
+		width: 1135px;
+
+		.row {
+			padding-right: 0;
+			padding-left: 5px;
+		}
+	}
+
+	.title-snoopy-combo {
+
+		.title-header h1 {
+			padding-left: 2px;
+		}
+
+	}
+}
+
+div.header_internal_wrapper {
+  padding-top: 20px;
+}
+
+div.inner-page-message {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+
+	.details-header {
+		width: 970px;
+		margin: 0 auto;
+		padding-left: 14px;
+		padding-right: 0;
+
+		.avatar {
+			margin-left: 20px;
+		}
+	}
+}
+
+.container, .footer .container, .global-message .message-wrapper {
+  width: 970px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Media queries */
+@import "media_queries/media-query500-992";
+@import "media_queries/media-query320-500";
+@import "media_queries/media-query1200";
+@import "media_queries/media-query1199";
+@import "media_queries/media-query980";
+@import "media_queries/media-query320-900";
+@import "media_queries/media-query768";
+@import "media_queries/media-query320-568-landscape-portrait";
+@import "media_queries/media-query768-1024-landscape-portrait";

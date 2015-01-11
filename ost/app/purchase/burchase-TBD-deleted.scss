@@ -1,0 +1,594 @@
+// ********************************** //
+// ******** PURCHASE SECTION ******** //
+// ********************************** //
+
+#purchase {
+
+  #purchase_callout {
+
+    ul{
+      list-style: square url("../assets/images/icon_check_list.png");
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 16px;
+      color: $dark-grey;
+      line-height: 40px;
+      margin-left: 5px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+
+      li {
+        padding-left: 12px;
+      }
+
+    }
+
+  }
+
+  #protection_info {
+    background: url("../assets/images/icons/icon_auto.svg") no-repeat;
+  }
+
+  #renters_info {
+    background: url("../assets/images/icons/icon_renters.svg") no-repeat;
+  }
+
+  .well{
+    padding: 10px 30px;
+
+    h3 {
+      margin-bottom: 0px;
+    }
+
+    p {
+      font-size: 16px;
+      color: $slate-grey;
+    }
+
+  }
+
+  .summary {
+    padding-left: 50px;
+  }
+
+  #save_notification {
+
+    img {
+      float: left;
+      width: 10%;
+      margin-top: 20px;
+    }
+    div {
+      float: left;
+      width: 90%;
+      padding-left: 30px;
+    }
+
+  }
+}
+
+// ********************************************** //
+// ******** PURCHASE ADJUSTMENTS SECTION ******** //
+// ********************************************** //
+
+#purchase_adjustments {
+
+  #list_header {
+    border-bottom: solid 1px $light-grey;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .updates_list {
+
+    margin: 20px 0px 0px 0px;
+    padding: 0px 0px 20px 0px;
+    border-bottom: solid 1px $light-grey;
+
+    h4 {
+      margin: 0;
+    }
+
+    & .icon {
+      margin-right: 15px;
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  #list_desc {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  #new_premium_callout {
+    text-align: center;
+
+    p.footnote {
+      margin: 0;
+      font-size: 14px;
+      color: $mid-grey;
+    }
+
+  }
+
+  #adjustment_list {
+    padding-right: 100px;
+  }
+
+  /* iPhone media query */
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    #adjustment_list {
+      padding: 0px;
+    }
+
+    #list_header {
+
+      border-bottom: none;
+
+      h2 {
+        font-size: 22px;
+        color: $mid-grey;
+        line-height: 30px;
+      }
+
+    }
+
+    .updates_list {
+      margin: 10px 0px 0px 0px;
+      padding: 0px 0px 10px 0px;
+      border-bottom: none;
+    }
+
+  }
+
+}
+
+// ****************************************** //
+// ******** PURCHASE CONFIRM SECTION ******** //
+// ****************************************** //
+
+#purchase_confirm,
+#purchase_drivers {
+
+  .driver-confirm-list,
+  .vehicle-confirm-list {
+
+    header {
+      border-bottom: solid 1px $light-grey;
+      padding: 15px 0px 15px 0px;
+      margin-bottom: 54px;
+
+      .lockup-heading{
+        padding-top: 20px;
+
+        .avatar{float: left; margin-top: 21px;}
+        img{margin-top: 13px;}
+        small{font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif; }
+        h2{margin-top:10px;}
+      }
+
+    }
+    section {
+      border-bottom: solid 3px $dark-rule;
+      padding-bottom: 75px;
+    }
+
+  }
+
+  form {
+    label {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+    }
+
+    .input-group{
+      input{
+        margin: 0px 0px 0px 15px;
+      }
+    }
+
+    .license-num{
+      select{
+        margin: 0px 30px 10px 0px;
+      }
+      input{
+        margin: 2px 0px  0px 0px;
+      }
+    }
+  }
+
+  & .row:last-child {
+    section {
+      border-bottom: solid 1px $light-grey;
+    }
+  }
+
+  #info_link {
+    position: relative;
+    top: 64px;
+    a {
+      & .icon {
+        position: relative;
+        top: 3px;
+        margin-left: 5px
+      }
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    select {
+      width: 100%;
+    }
+
+    .vehicle-confirm-list {
+      header {
+        margin-bottom: 15px;
+
+        h2 {
+          font-size: 20px;
+          margin-top: 5px !important;
+        }
+
+        small {
+          color: $mid-grey;
+        }
+      }
+    }
+
+  }
+
+}
+
+// ********************************************** //
+// ********** PURCHASE OVERVIEW SECTION ********* //
+// ********************************************** //
+
+#purchase_overview {
+
+  #overview_instructions,
+  #overview_documents,
+  #auto_documents{
+    border-bottom: 3px solid $dark-rule;
+
+    .btn.primary{
+      margin-bottom: 20px;
+    }
+  }
+
+  .divider{
+    padding: 5px 0px 23px 0px;
+  }
+
+  #overview_instructions hr:last-child{
+    margin-bottom: 50px;
+  }
+
+  hr + header{
+    margin-top: 50px;
+  }
+
+  .well{
+    padding: 10px 30px;
+    margin: 32px 0px 60px 0px;
+
+    h3 {
+      margin-bottom: 0px;
+    }
+
+    p {
+      font-size: 15px;
+      color: $slate-grey;
+    }
+
+    li,
+    address,
+    strong{
+      color: $slate-grey;
+    }
+
+  }
+
+  #more_locations{
+    padding: 10px 20px;
+    margin: 30px 0px 10px 0px;
+  }
+
+  section.coverage{
+    position: relative;
+    padding-right: 120px;
+
+    .btn{
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+  }
+
+}
+
+// ******************************************* //
+// ******** PURCHASE COMPLETE SECTION ******** //
+// ******************************************* //
+
+#purchase_complete {
+
+  #e_signature {
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    padding-top: 30px;
+    padding-bottom: 80px;
+    border-top: solid $mid-grey 3px;
+
+    #e_sig_form {
+      margin-top: 20px;
+
+      input {
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  footer {
+    border-top: solid $light-grey 1px;
+  }
+}
+
+// ******************************************* //
+// ************* PURCHASE FINAL ************** //
+// ******************************************* //
+
+#purchase_final {
+
+  header {
+    & .policy-number {
+      color: $mid-grey;
+    }
+  }
+
+  .info {
+    color: $mid-grey;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #renter_header {
+    border-top: solid 2px $mid-grey;
+    padding-top: 30px;
+    margin-top: 60px;
+  }
+
+  #auto_policy_call_out,
+  #renters_policy_call_out{
+    header,
+    hr {
+      margin: 0;
+    }
+
+    section {
+      padding-top: 20px;
+    }
+  }
+
+  header.coverage-header {
+    border-bottom: solid 1px $light-grey;
+    margin: 0;
+    padding-bottom: 18px;
+
+    h2 {
+      font-size: 22px;
+      color: $mid-grey;
+    }
+  }
+
+  & .document-list {
+    border-bottom: solid 1px $light-grey;
+
+    & .wrapper {
+      width: 350px;
+      p {
+        font-size: 14px;
+      }
+    }
+
+    button {
+      position: relative;
+      top: 20px;
+    }
+
+    padding-top: 5px;
+    padding-bottom: 0px;
+
+  }
+
+}
+
+// ******************************************* //
+// ************** PURCHASE PAY *************** //
+// ******************************************* //
+
+#purchase_pay {
+
+  .accordion-well {
+    margin: 0;
+    padding: 5px 0px 15px 15px;
+    color: black;
+    text-align: left;
+    font-size: 14px;
+
+    & .icon {
+      position: relative;
+      top: 7px;
+      margin-right: 16px;
+    }
+
+  }
+
+  #bill_me_well {
+    margin-bottom: 30px;
+  }
+
+  #e_signature {
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    padding-top: 30px;
+    padding-bottom: 80px;
+    border-top: solid $mid-grey 3px;
+
+    #e_sig_form {
+      margin-top: 20px;
+
+      input {
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  #policy_call_out {
+
+    .summary {
+      padding-left: 50px;
+    }
+
+    #protection_info {
+      background: url("../assets/images/icons/icon_auto.svg") no-repeat;
+    }
+
+    #renters_info {
+      background: url("../assets/images/icons/icon_renters.svg") no-repeat;
+    }
+
+  }
+
+  #payment_method_list {
+
+    margin-bottom: 60px;
+
+    .help-icon {
+      position: relative;
+      top: 3px;
+      margin-left: 8px;
+    }
+
+    .best-value-label {
+      background-color: #96ce35;
+      text-transform: uppercase;
+      position: relative;
+      margin: 0px 0px 0px 2px;
+      padding: 5px;
+      font-size: 8px;
+      bottom: 3px;
+    }
+
+    .icon-check-helper {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .accordion-wrap {
+      input[type='text'] {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+
+    & .radio {
+
+      ul {
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+        }
+      }
+
+      & .payment-details {
+        label {
+          padding-left: 0;
+          color: #000000;
+        }
+      }
+    }
+
+    label.method {
+      border-bottom: solid 1px #eff0f6;
+      display: block;
+      padding: 15px 0px 0px 0px;
+      color: #000000;
+      margin: 0;
+
+      p.footnote {
+        margin-left: 30px;
+      }
+
+      .form-group {
+        p.footnote {
+          margin-left: 0px;
+        }
+      }
+
+    }
+
+  }
+
+  footer {
+    border-top: solid 1px $light-grey;
+  }
+
+}
+
+// ******************************************* //
+// ************** PURCHASE KBA *************** //
+// ******************************************* //
+
+#purchase_knowledge_based_auth {
+
+  #associated_address {
+    margin-bottom: 40px;
+  }
+
+  #associated_phone_numbers,
+  #associated_address {
+
+    margin-top: 60px;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+
+        strong {
+          color: $mid-grey;
+        }
+
+      }
+    }
+  }
+
+  footer {
+    border-top: solid 1px $light-grey;
+  }
+
+ }

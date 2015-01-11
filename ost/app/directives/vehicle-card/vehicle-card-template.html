@@ -1,0 +1,19 @@
+<!-- mobile card -->
+<div class="mobile-card visible-xs clearfix">
+    <div class="text col-xs-10 pad-all-0">
+        <strong>{{data.year}} {{data.make}}</strong> {{data.model}} {{data.trim}}
+    </div>
+
+    <div class="icon col-xs-1 pad-all-0">
+        <button ng-click="toggleVehicle($event)" class="btn remove"></button>
+    </div>
+
+</div>
+
+<!-- desktop card -->
+<div class="well hidden-xs">
+    <img ng-if="data.active" ng-src="{{data.image}}" style="height: 70px;">
+    <h4>{{data.year}} {{data.make}}</h4>
+    <p>{{data.model}} {{data.trim}} <span ng-if="!data.active">has been removed</span></p>
+    <button class="btn remove full" ng-click="toggleVehicle($event)">{{message}}</button>
+</div>

@@ -1,0 +1,77 @@
+#purchase_adjustments {
+
+  #list_header {
+    border-bottom: solid 1px $light-grey;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .updates_list {
+
+    margin: 20px 0px 0px 0px;
+    padding: 0px 0px 20px 0px;
+    border-bottom: solid 1px $light-grey;
+
+    h4 {
+      margin: 0;
+    }
+
+    & .icon {
+      margin-right: 15px;
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  #list_desc {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  #new_premium_callout {
+    text-align: center;
+
+    p.footnote {
+      margin: 0;
+      font-size: 14px;
+      color: $mid-grey;
+    }
+
+  }
+
+  #adjustment_list {
+    padding-right: 100px;
+  }
+
+  /* iPhone media query */
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    #adjustment_list {
+      padding: 0px;
+    }
+
+    #list_header {
+
+      border-bottom: none;
+
+      h2 {
+        font-size: 22px;
+        color: $mid-grey;
+        line-height: 30px;
+      }
+
+    }
+
+    .updates_list {
+      margin: 10px 0px 0px 0px;
+      padding: 0px 0px 10px 0px;
+      border-bottom: none;
+    }
+
+  }
+
+}

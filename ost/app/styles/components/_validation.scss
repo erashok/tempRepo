@@ -1,0 +1,84 @@
+input {
+  //notify user of inputs that are invalid
+  &.ng-invalid { border: 2px solid red; }
+}
+
+form {
+
+  // reset the default angular styling for invalid forms
+  input[type="*"] {
+    &.ng-invalid {
+      & .ng-valid {
+        border: none;
+      }
+    }
+  }
+
+  //remove invalidation from forms not yet touched
+  &.ng-dirty input.ng-pristine,
+  &.ng-pristine input{
+    border-top: 2px solid #cfd1d4;
+    border-left: 2px solid #cfd1d4;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+  }
+
+
+  span.notification{
+    position: absolute;
+    width: 200px;
+    text-align: left;
+    font-weight:bold;
+    color: white;
+  }
+
+  .tooltip{
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    opacity: 1;
+
+    &.lower{
+      top: -20px;
+    }
+    &.top{
+
+      .tooltip-inner{
+        padding: 5px 15px;
+        background-color: #FFF;
+        color: #000;
+      }
+      .tooltip-arrow{
+        border-top-color: #FFF;
+      }
+    }
+  }
+
+  & .has-error {
+    & .form-control {
+      border-color: $error-red;
+    }
+
+    & .control-label {
+      color: $dark-grey
+    }
+
+    p.help-block {
+      color: $error-red;
+      font-size: 14px;
+      position: relative;
+      bottom: 4px;
+
+      & .help-block-icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 4px;
+        position: relative;
+        top: -1px;
+      }
+
+    }
+
+  }
+
+}

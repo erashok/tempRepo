@@ -1,0 +1,68 @@
+<section class="col-md-12 col-sm-12 pad-all-0">
+    <div>
+        <h2>
+            Auto Insurance + Renter's Insurance
+        </h2>
+        <p class="footnote">This plan covers you and your vehicle in case of a typical accident.</p>
+    </div>
+
+</section>
+
+<div ng-include="'renters/_partials/_horizontal_selection.html'"></div>
+
+<div id="renters_coverages" class="col-md-12 col-sm-12 col-xs-12 pad-all-0">
+
+    <form class="form-horizontal" role="form">
+
+        <!-- start standard coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_standard_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <!-- start additional coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_additional_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <!-- start urgent situations coverage table -->
+        <div ng-include="'renters/_partials/coverage_tables/_urgent_situations_coverage_table.html'"></div>
+        <!-- eo-->
+
+        <!-- car coverage tables -->
+        <section id="vehicle_coverage" class="col-md-12 vehicle_coverage coverage-row hidden-xs pad-all-0">
+
+            <header class="clearfix">
+                <h2>Coverage for your vehicles</h2>
+                <p>These coverages protect your vehicles if they are damaged</p>
+
+                <a id="add_vehicle" data-toggle="modal" data-target="#vehicleModal"><u>Add Another Vehicle</u></a>
+
+            </header>
+
+            <section ng-repeat="vehicle in vehicles" class="auto_section clearfix pad-all-0">
+
+                <div class="col-md-12 lockup-heading">
+
+                    <img class="car pull-left mar-right-30" src="assets/images/{{vehicle.image}}">
+
+                    <small><strong class="grey">Vehicle {{$index + 1}}</strong></small>
+                    <div>
+                        <h3><strong>{{vehicle.year}} {{vehicle.make}}</strong> <span class="light">{{vehicle.model}} {{vehicle.trim}}</span></h3>
+                        <a><u>Edit or remove</u></a>
+                    </div>
+
+                </div>
+
+                <div ng-include="'renters/_partials/coverage_tables/_vehicle_coverage_table.html'"></div>
+            </section>
+
+        </section>
+        <!-- eo -->
+
+        <!-- driver selection module -->
+        <div ng-include="'renters/_partials/_driver_selection.html'"></div>
+        <!-- eo -->
+
+    </form>
+
+</div>
+
+<div ng-include="'renters/_partials/_horizontal_selection.html'"></div>

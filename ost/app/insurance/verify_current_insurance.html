@@ -1,0 +1,70 @@
+<div id="verify_insurance">
+
+    <div class="row pad-all-0 mar-all-0">
+
+        <header>
+            <h2 class="mar-bottom-60">Here’s what we found about your current insurance</h2>
+            <p>
+                You’ve been continuously insured for 6 years <br/>
+                Current policy expires October 15, 2014 <br/>
+                <a href="#"><u>Edit Info</u></a>
+            </p>
+        </header>
+
+        <hr class="divider bold"/>
+
+    </div>
+
+    <form name="verifyInsuranceForm" novalidate>
+
+        <div class="form-group clearfix">
+            <div class="col-sm-12 col-md-12 pad-all-0">
+                <label class="full">When would you be interested in starting a new policy with metlife?</label>
+                <input type="text" placeholder="Your Email" class="col-xs-12 col-sm-4 col-md-4"/>
+            </div>
+            <p class="footnote">This should be after your current expiration date</p>
+        </div>
+
+        <hr class="divider"/>
+
+        <div class="form-group clearfix">
+            <div class="col-sm-12 col-md-12 pad-all-0">
+                <label class="full">Who is your current insurance provider? <icon class="help-icon-label" type="help"></icon></label>
+                <input type="search" placeholder="Start typing now" class="col-xs-12 col-sm-6 col-md-4"/>
+            </div>
+            <p class="footnote">Example: Geico</p>
+        </div>
+
+        <hr class="divider"/>
+
+        <div class="form-group clearfix mar-bottom-30">
+            <div class="col-sm-12 col-md-12 pad-all-0">
+                <label class="full">The bodily injury coverage on your current policy is</label>
+                <div class="col-xs-12 col-sm-4 col-md-4 pad-all-0">
+                    <div class="styled-select">
+                        <select>
+                            <option value="">$100,000 per person / $300,000 per accident</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="mar-bottom-0"/>
+        
+        <footer class="inner-page-footer clearfix">
+            <!-- desktop footer -->
+            <div class="hidden-xs">
+                <a href="#/quote" class="btn primary wide" ng-disabled="verifyInsuranceForm.$invalid">continue to quote</a>&nbsp; We'll <strong>review your quote</strong> next!
+            </div>
+
+            <!-- mobile footer -->
+            <div class="col-xs-12 visible-xs pad-all-0">
+                <p>&nbsp; We'll <strong>review your quote</strong> next</p>
+                <a href="#/quote" class="btn primary wide" ng-disabled="verifyInsuranceForm.$invalid">continue to quote</a>
+            </div>
+        </footer>
+
+    </form>
+
+</div>

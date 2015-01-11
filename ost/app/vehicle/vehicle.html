@@ -1,0 +1,19 @@
+<div id="vehicle_detail" class="col-md-12 pad-all-0">
+    <!-- details form -->
+    <div class="col-md-12 pad-all-0">
+        <div ng-include="'vehicle/_partials/_vehicle_detail_form.html'"></div>
+    </div>
+    <footer class="inner-page-footer col-xs-12 col-xs-12">
+        <!-- desktop footer -->
+        <div class="hidden-xs">
+            <a href="" ng-click="continueClick();" class="btn primary wide">Continue</a>
+            &nbsp; We'll work on your <strong>first driver</strong> next
+        </div>
+
+        <!-- mobile footer -->
+        <div class="col-xs-12 visible-xs pad-all-0">
+            <p>Next, we'll <strong>work on your second vehicle</strong></p>
+            <a href="" ng-click="continueClick();" class="btn primary wide">Continue</a>
+        </div>
+    </footer>
+</div>

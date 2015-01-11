@@ -1,0 +1,7 @@
+<svg version="1.1" id="{{id}}"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 19.2 20" style="enable-background:new 0 0 19.2 20;"xml:space="preserve" ng-width="{{width}}" ng-height="{{height}}">
+<g>
+	<circle style="fill:{{fill}};" cx="9.6" cy="5.4" r="5.4"/>
+	<path style="fill:{{fill}};" d="M19.2,20v-1.399c0-3.301-2.7-6-6-6H6c-3.3,0-6,2.699-6,6V20H19.2z"/>
+</g>
+</svg>

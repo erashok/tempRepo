@@ -1,0 +1,43 @@
+<div id="discounts" class="col-md-12 pad-all-0">
+
+     <div class="row pad-all-0">
+
+        <!-- call out: mobile -->
+        <div ng-include="'/discounts/_partials/_discount_list_mobile.html'" class="hidden-lg hidden-md col-md-4"></div>
+
+        <div id="discounts_form" class="col-md-8 pad-right-100">
+            <header>
+                <h2>You've qualified for certain discounts but let's find more</h2>
+                <p>MetLife offers discounts through over 800+ colleges <br/> and 2000+ institutions</p>
+                <hr/>
+            </header>
+
+            <div class="form-group">
+                <label class="full">Save with colleges attended and groups to which <icon class="inline" type="help"></icon></label>
+                <input type="text" class="col-md-12" placeholder="First name">
+                <br/>
+                <label class="full">Save with your affinity accounts  <icon class="inline" type="help"></icon></label>
+
+                <div class="col-md-4 pad-all-0">
+                    <div class="styled-select">
+                        <select class="col-md-4">
+                            <option value="">select</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- call out: desktop -->
+        <div ng-include="'/discounts/_partials/_discount_list_desktop.html'" class="hidden-xs col-md-4"></div>
+
+    </div>
+
+    <footer class="row pad-all-0">
+        <p id="mobile_quote_button_label" class="hidden-lg hidden-md">You'll see your quote next</p>
+        <a id="get_quote_button" href="#/quote" class="btn primary wide">get your quote</a><span class="hidden-xs">&nbsp; we'll see your quote next!</span>
+    </footer>
+
+</div>
+

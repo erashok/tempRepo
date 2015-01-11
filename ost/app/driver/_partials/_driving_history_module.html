@@ -1,0 +1,49 @@
+<!-- driving history -->
+<div id="driving_history">
+    <label class="full">Your driving history</label>
+
+    <label class="control-label">Have you had any of the following</label>
+    <ul>
+        <li>At fault accidents in the past 5 years</li>
+        <li>Accidents that weren't your fault, claims, or violations in the past 3 years</li>
+    </ul>
+
+    <div>
+        <label class="radio-inline col-xs-12 col-sm-1 col-md-1">
+            <input ng-model="hadAccidents" type="radio" name="pastaccidents" id="pastaccidents1" value="false"> No
+        </label>
+
+        <label class="radio-inline col-xs-12 col-sm-1 col-md-1">
+            <input ng-model="hadAccidents" type="radio" name="pastaccidents" id="pastaccidents2" value="true"> Yes
+        </label>
+    </div>
+    <br/>
+
+    <!-- conditional driving history div -->
+    <div ng-if="hadAccidents == 'true'" style="clear: both;">
+        <!-- accident list -->
+        <section id="accident_list" ng-hide="incidents.length == 0">
+            <div id="list">
+                <ul>
+                    <li ng-repeat="incident in incidents">{{incident.category}} / {{incident.description}} -
+                        {{incident.date | date:"MM/dd/yyyy"}}<a ng-click="editIncident($index)">&nbsp; {{editModeLabel}}</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- new accident form -->
+        <section id="new_accident_form" class="col-md-12">
+
+            <div>
+                <strong>Please specify the type and date of occurrence (since 09/2009):</strong>
+                <div ng-include="'/driver/_partials/_incident_form.html'"></div>
+            </div>
+
+            <button id="additional_incident_button" ng-show="addlAccidentButton" ng-click="addAddlIncident()"
+                    class="btn basic wide">add an additional accident, violation or claim
+            </button>
+        </section>
+
+    </div>
+    <!-- EO -->
+</div>

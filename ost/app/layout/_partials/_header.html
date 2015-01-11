@@ -1,0 +1,7 @@
+<!-- home page header -->
+<div ng-if="isDefaultHeader" class="header xl" ng-include="'layout/_partials/_home_nav.html'"></div>
+
+<!-- internal header -->
+<div ng-if="!isDefaultHeader" class="header" ng-include="'layout/_partials/_internal_page_nav.html'"></div>
+
+<inner-page-message></inner-page-message>

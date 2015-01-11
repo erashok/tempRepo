@@ -1,0 +1,25 @@
+<section class="summary-call-to-action pad-all-0 mar-all-0 clearfix">
+    <header>
+        <h2 class="hidden-xs">{{tab.name}}</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis, mi at aliquet fermentum, nisl nibh interdum augue, pretium euismod augue ipsum viverra velit. Sed laoreet nisl a ante hendrerit tempor.</p>
+    </header>
+
+    <!-- CTA insert for desktop/tablet -->
+    <div ng-include="'/renters/_partials/_quote_cta.html'" class="hidden-xs"></div>
+
+    <!-- CTA insert for mobile -->
+    <div ng-include="'/renters/_partials/_quote_cta_mobile.html'" class="visible-xs"></div>
+
+    <!-- desktop / tablet footer -->
+    <footer class="hidden-xs col-sm-12 col-md-12">
+        <div class="renter-cta">
+            <h4>Protect your valuables for <strong>$10 more</strong> a month when you add renter's insurance</h4>
+            <button class="btn dark">get renters insurance quote</button>
+        </div>
+    </footer>
+
+    <!-- mobile footer -->
+    <footer class="visible-xs">
+        <p>Protect your valuables for <strong>$10 more</strong> a month <br/> <a href="#"><u>Add renters insurance</u></a></p>
+    </footer>
+</section>

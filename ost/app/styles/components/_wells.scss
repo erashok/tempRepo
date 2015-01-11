@@ -1,0 +1,178 @@
+// button component
+// components/_wells.scss
+
+// primary mixin
+@mixin wells {
+
+  .well{
+    text-align: center;
+    padding: 30px;
+    background-color: $form-bg;
+    border: 1px solid $form-border;
+    box-shadow: none;
+    border-radius: 6px;
+    position: relative;
+
+    p{
+      font-family: FrutigerLTstdRegular, "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      font-size: 18px;
+      line-height: 26px;
+      color: $dark-grey;
+
+      &.light{
+        font-family: FrutigerLTstdLight, "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+        margin-top: 50px;
+      }
+
+      &.footnote{
+        font-size: 16px;
+        margin-top: 15px;
+      }
+    }
+
+    button.full{
+      width: calc(100% - 40px);
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    &.normal{
+      background-color: white;
+      border: 1px solid $pale-blue;
+    }
+
+    &.warning {
+      background-color: $pale-yellow;
+      border: solid 1px $pale-yellow-border;
+    }
+
+    &.note{
+      text-align: left;
+      background-color: $pale-blue;
+      border: 1px solid  $pale-blue-outline;
+
+      hr{
+        border-top: 1px solid  $pale-blue-outline;
+      }
+    }
+
+    &.info{
+      background-color: $pale-blue;
+      border: 1px solid  $pale-blue-outline;
+
+      hr{
+        border-top: 1px solid  $pale-blue-outline;
+      }
+    }
+
+    &.faded{
+      background-color: white;
+      border: 1px solid $light-grey;
+      h4,p{
+        color: lighten($rich-dark-grey, 40%);
+      }
+    }
+
+    .price-lg{
+      margin-right: 30px;
+    }
+
+    p.savings{
+      line-height: 72px;
+    }
+
+    .purchase-cta{
+      margin-left: 40px;
+      vertical-align: bottom;
+
+      &.footnote{
+        margin-top: 15px;
+      }
+    }
+
+    .renter-cta{
+      margin-left: 40px;
+    }
+
+    /* Media Queries */
+    @media only screen and (min-width: 768px) {
+      /* tablets and desktop */
+
+
+    }
+
+    @media only screen and (max-width: 767px) {
+      /* phones */
+
+      .renter-cta{
+        margin-left: 0px;
+      }
+
+      p{
+        color: $mid-grey;
+        strong{
+          color: $dark-grey;
+        }
+      }
+
+      .well{
+        padding-top: 15px;
+
+        p{color: $dark-grey;}
+
+        .savings{
+          line-height: 22px;
+          padding-bottom: 13px;
+        }
+
+        .purchase-cta{
+          margin: 0px auto;
+          button{
+            width: 100%;
+          }
+
+          &.footnote{
+            margin-top: 15px;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .inline{
+    > *{
+      display: inline-block;
+    }
+  }
+
+  /* Double Inset - fitting a panel in a well */
+  .well{
+    .well{
+      margin-top: -31px;
+      margin-left: -31px;
+      margin-right: -31px;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .horizontal_selection{
+    padding: 0px;
+    &.well{
+      .well{
+        margin: -1px;
+        padding: 30px;
+        .option{
+
+        }
+      }
+      .purchase-cta{
+        padding: 30px;
+      }
+    }
+  }
+
+}

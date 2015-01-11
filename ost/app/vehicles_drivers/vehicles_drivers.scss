@@ -1,0 +1,250 @@
+#renters_property,
+#vehicle_driver_page,
+#vehicle_detail,
+#driver_detail {
+
+  .vehicles,
+  .drivers {
+
+    header {
+      border-bottom: solid 1px $light-grey;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      margin-top: 15px;
+      padding-bottom: 30px !important;
+      border-bottom: solid 2px $mid-grey;
+
+      button {
+        width: auto !important;
+      }
+
+    }
+
+  }
+
+  #vehicles,
+  #drivers {
+
+    margin-left: -10px;
+
+    & .well {
+      min-height: 245px;
+      padding: 30px 20px 30px 20px;
+    }
+  }
+
+  #help_text {
+    margin-top: 30px;
+    a {
+      font-weight: bold;
+    }
+
+  }
+
+  #driver_detail_form,
+  #vehicle_detail_form {
+    label.full {
+      margin-top: 0;
+    }
+
+    label.control-label{
+      font-family: $frutiger-bold;
+      font-size: 14px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      padding: 30px 0px;
+      border-bottom: solid 1px $light-grey;
+      margin-bottom: 0;
+
+      &.no-border {
+        border-bottom: 0;
+        padding: 30px 0px 0px 0px;
+      }
+
+    }
+
+    p.footnote{
+      padding-top: 10px;
+      line-height: 18px;
+      float: left;
+      margin-bottom: 0;
+    }
+
+    .checkbox,
+    .checkbox-inline,
+    .radio-inline{
+      padding-left: 0px;
+    }
+
+  }
+
+  #driving_history,
+  #claim_history {
+
+    #new_accident_form {
+      border: solid 1px #eff0f6;
+      padding: 20px 0px 0px 20px;
+      margin-bottom: 35px;
+
+      .form-group{
+        margin: 0px;
+        padding: 20px 0px;
+
+        &.accident-claim-group {
+          margin-right: 20px;
+        }
+
+      }
+    }
+
+    strong{
+      font-family: $frutiger-bold;
+      font-size: 16px;
+    }
+
+    #accident_list {
+      margin-bottom: -2px;
+
+      #list {
+        background-color: $light-blue;
+        border-top: solid 1px $light-grey;
+        border-left: solid 1px $light-grey;
+        border-right: solid 1px $light-grey;
+        padding: 20px 0px 5px 20px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        ul {
+          li {
+            color: #000000;
+            font-weight: bold;
+          }
+        }
+
+      }
+
+      #action_pane {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+    }
+
+    #new_accident_form {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+
+      #entry_delete_button {
+        position: relative;
+        bottom: 16px;
+      }
+
+      #additional_incident_button {
+        margin-bottom: 20px;
+      }
+
+      & .form-group {
+        border: none;
+      }
+
+      select,
+      input[type='text'] {
+        height: 50px;
+        display: inline-block;
+      }
+
+      #category_select {
+      }
+
+      #type_select {
+      }
+
+      #type_input {
+        margin: 0px !important;
+        width: 160px
+      }
+
+      #add_button {
+        height: 50px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .details-header {
+    background-color: $light-grey;
+    height: 100px;
+    border-bottom: 1px solid darken($light-grey, 10%);
+    margin: -35px -25% 30px -25%;
+
+    #driver_avatar {
+      margin-top: 12px;
+
+      .car{
+        position: relative;
+        top: 13px;
+        left: 10px;
+      }
+
+      .avatar{
+        position: relative;
+        top: 22px;
+        left: 85px;
+      }
+    }
+
+    #driver_count {
+      margin-top: 10px;
+    }
+
+    #driver_name {
+      margin-top: 20px;
+      padding-left: 65px;
+    }
+
+    h3 {
+      margin-top:0px;
+    }
+  }
+  
+ span.primary-driver-label {
+	 display: block;
+	 font-size: 16px;
+	 color: #333;
+	 padding-top: 71px;
+ } 
+
+  //iPhone
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    #vehicles,
+    #drivers {
+      margin-left: 0 !important;
+    }
+
+    .vehicles,
+    .drivers {
+
+      header {
+        margin: 0!important;
+      }
+
+      .card {
+        padding-right: 0 !important;
+      }
+
+    }
+
+  }
+
+  //tablet
+  @media screen and (min-width: 992px){
+
+  }
+}

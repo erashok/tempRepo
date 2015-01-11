@@ -1,0 +1,134 @@
+<div id="your_info" class="col-md-12 pad-all-0">
+
+    <!--<pre>{{currentQuote|json}}</pre>-->
+
+	<form name="yourInfoForm" autocomplete="off">
+
+	    <section id="personal_info" class="col-md-9 col-sm-9 clearfix row">
+
+	            <!-- name fields -->
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label class="full">Name</label>
+
+                        <ng-form name="firstNameForm">
+                            <div class="form-control" ng-class="{ 'has-error' : firstNameForm.first_name.$invalid }">
+                                <input type="text"
+                                       size="20"
+                                       name="first_name"
+                                       placeholder="{{AutoProduct_Template.firstName.prompt}}"
+                                       ng-model="AutoProduct_Data.firstName"
+                                       ng-pattern="AutoProduct_Template.firstName.regexp"
+                                       required />
+                                <input-validation-message expression="firstNameForm.first_name.$dirty && firstNameForm.first_name.$invalid" message="'Please enter your first name'"></input-validation-message>
+                            </div>
+                        </ng-form>
+
+                        <ng-form name="lastNameForm">
+                            <div class="form-control" ng-class="{ 'has-error' : lastNameForm.last_name.$invalid }">
+                                <input type="text"
+                                       size="30"
+                                       name="last_name"
+                                       placeholder="{{AutoProduct_Template.lastName.prompt}}"
+                                       ng-model="AutoProduct_Data.lastName"
+                                       ng-pattern="AutoProduct_Template.lastName.regexp"
+                                       required />
+                                <input-validation-message expression="lastNameForm.last_name.$dirty && lastNameForm.last_name.$invalid" message="'Please enter your last name'"></input-validation-message>
+                            </div>
+                        </ng-form>
+                    </div>
+                </div>
+
+	            <!-- address -->
+                <ng-form name="addressForm">
+                    <div class="form-group" ng-class="{ 'has-error' : addressForm.address.$invalid }">
+                        <label class="full">Address</label>
+                        <input type="text"
+                               size="30"
+                               placeholder="{{Address_Template.street.prompt}}"
+                               name="address"
+                               ng-model="Address_Data.street"
+                               required />
+                        <input-validation-message expression="addressForm.address.$dirty && addressForm.address.$invalid" message="'Please enter a address'"></input-validation-message>
+                    </div>
+                </ng-form>
+
+                <ng-form name="addressFormZip">
+                    <div class="form-group" ng-class="{ 'has-error' : addressFormZip.zip.$invalid }">
+                        <input type="text"
+                               ng-blur="lookupZip(currentQuote.location.zip)"
+                               placeholder="{{Address_Template.zip.prompt}}"
+                               name="zip"
+                               ng-model="Address_Data.zip"
+                               ng-pattern="Address_Template.zip.regexp"
+                               maxlength="5"
+                               size="10"
+                               required />
+                        <span class="state-indicator">{{Address_Data.city}}, {{Address_Data.state}}</span>
+                        <input-validation-message expression="addressFormZip.zip.$error.pattern || addressFormZip.zip.$error.minlength" message="'Please enter 5 numbers'"></input-validation-message>
+                    </div>
+                </ng-form>
+
+	            <!-- birthday -->
+                <ng-form name="birthdayForm">
+                    <div class="form-group" ng-class="{ 'has-error' : birthdayForm.birthdate.$invalid }">
+                        <label class="full">Birthday</label>
+                        <input type="date"
+                               ng-model="AutoProduct_Data.birthDate"
+                               name="birthdate"
+                               required />
+                        <input-validation-message expression="yourInfoForm.birthdate.$error.pattern" message="'Please enter numbers in this pattern: MM/DD/YYYY'"></input-validation-message>
+                        <br class="visible-xs"/>
+                        <a href="#" class="help-text"><u>Why do you need this?</u> </a>
+
+                        <!--<tooltip content="<h4>Aenean nec imperdiet massa</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin libero non leo consequat, ac placerat nisi placerat Nullam. Velit odio, vehicula eu auctor ut, volutpat sed turpis. <a>Felis nulla consequat quam</a></p>"></tooltip>-->
+
+                    </div>
+                </ng-form>
+
+            <!-- employer -->
+            <ng-form name="employerForm">
+                <div class="form-group" ng-class="{ 'has-error' : employerForm.employer.$invalid }">
+                    <label class="full">Employer (optional)</label>
+                    <input type="text"
+                           name="employer"
+                           ng-model="AutoProduct_Data.group"
+                           placeholder="Your employer"
+                           typeahead="employer as employer.name for employer in getEmployers($viewValue)"
+                           typeahead-loading="LoadingEmployers"
+                           class="form-control">
+                </div>
+
+                 <p class="footnote">We'll use this information later to find you a discount.</p>
+            </ng-form>
+
+	    </section>
+
+	    <section id="vehicle_lookup" class="row">
+
+            <div class="col-md-1 col-sm-1 image hidden-xs pad-all-0">
+                <icon type="lightbulb" class="pull-left mar-right-30"></icon>
+            </div>
+            <div class="col-md-11 col-sm-11 copy pad-all-0">
+                <h3>To save you time, we will look up your vehicles and drivers automatically</h3>
+                <p class="footnote">We get this info from public records, like the DMV. You will have the change to edit any of this info. <icon type="help"></icon></p>
+                <a href="#"><u>I'll enter my vehicle and driver info manually instead</u></a>
+            </div>
+	    </section>
+
+        <footer class="inner-page-footer col-xs-12 col-xs-12">
+	        <!-- desktop footer -->
+	        <div class="hidden-xs">
+	            <button class="btn primary wide" ng-click="continueClick();">Continue</button>
+	            &nbsp; We'll find your <strong>vehicles &amp; drivers</strong> next
+	        </div>
+
+	        <!-- mobile footer -->
+	        <div class="col-xs-12 visible-xs pad-all-0">
+	            <p>We'll find your <strong>vehicles &amp; drivers</strong> next</p>
+	            <button type="submit" class="btn primary wide">Continue</button>
+	        </div>
+		</footer>
+
+	</form>
+</div>

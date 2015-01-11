@@ -1,0 +1,27 @@
+<div class="accordion-wrap">
+
+    <div id="payroll_well" class="accordion-well well warning">
+        <icon class="icon" type="alert_flag_orange"></icon> $190 (auto) + $10 (renters) will be charged monthly
+    </div>
+
+    <form name="payrollDeductForm" novalidate>
+
+        <ng-form name="employeeIdForm" ng-class="{ 'has-error' : payrollDeductForm.eid.$invalid }">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Employee ID</label>
+                <input class="col-sm-8 col-md-8" type="text" name="eid" ng-model="paymentForm.payroll.employee_id" placeholder="Employee ID"/>
+            </div>
+        </ng-form>
+
+        <ng-form name="ssnForm" ng-class="{ 'has-error' : ssnForm.ssn.$invalid }">
+            <div class="form-group clearfix mar-all-0 pad-all-0">
+                <label class="full">Last 4 digits of SSN</label>
+                <!--<input type="text" name="ssn" ng-model="paymentForm.payroll.ssn" placeholder="4 Digits" ng-maxlength="4" ng-minlength="4" ng-pattern="/^\d+$/" maxlength="4"/>-->
+                <input class="col-sm-8 col-md-8" type="text" name="ssn" ng-model="paymentForm.payroll.ssn" placeholder="4 Digits" ng-maxlength="4" ng-minlength="4" ng-pattern="/^\d+$/"/>
+                <input-validation-message expression="ssnForm.ssn.$invalid" message="'SSN must be 4 digits and consist of only numbers'"></input-validation-message>
+                <p class="col-sm-12 col-md-12 pad-all-0" class="footnote">We'll verify the above information with your employer</p>
+            </div>
+        </ng-form>
+
+    </form>
+</div>

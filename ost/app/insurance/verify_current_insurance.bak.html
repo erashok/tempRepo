@@ -1,0 +1,87 @@
+<div id="verify_insurance" class="col-md-12 pad-all-0">
+
+    <header class="col-md-12">
+        <h2>Verify your current insurance</h2>
+    </header>
+
+    <form name="verifyInsuranceForm" novalidate>
+
+        <section id="current_insurance_details">
+            <div class="row pad-all-0">
+                <div class="col-md-6">
+                    <p>Based on the information you provided we found the following information about your current coverages.</p>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">How did we find this info?</a>
+                </div>
+            </div>
+
+            <div class="row pad-all-0">
+                <div class="col-md-6">
+                    <p><strong>The bodily injury limits on your current policy are:</strong> <br/> $100,000 per person / $300,000 per accident</p>
+                </div>
+                <div class="col-md-6">
+                    <a href="#">[edit]</a>
+                </div>
+            </div>
+
+            <div class="row pad-all-0">
+                <div class="col-md-6">
+                    <p><strong>You’ve been continuously insured for:</strong> <br/> 6 Years (current policy expires August 15, 2014)</p>
+                </div>
+            </div>
+
+            <!-- start form -->
+            <div id="current_insurance_form">
+                <div class="row pad-all-0">
+                    <div class="col-md-6">
+
+                        <!-- deductible form -->
+                        <ng-form name="deductibleForm">
+                            <div class="form-group" ng-class="{ 'has-error' : deductibleForm.deductible.$invalid }">
+                                <label class="full">What is your current deductible</label>
+
+                                <div class="col-md-4 pad-all-0">
+                                    <div class="styled-select">
+                                        <select name="deductible" required>
+                                            <option>$500</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <input-validation-message expression="deductibleForm.deductible.$invalid" message="'Please choose a deductible'"></input-validation-message>
+                            </div>
+                        </ng-form>
+
+                    </div>
+                    <div class="col-md-6">
+                        <small>This is the highest value deductible on any of your vehicles. Don’t worry, if you don’t know it we’ll use $500</small>
+                    </div>
+                </div>
+
+                <div class="row pad-all-0">
+                    <div class="col-md-6">
+
+                        <!-- desired policy start date -->
+                        <ng-form name="policyStartDateForm">
+                            <div class="form-group" ng-class="{ 'has-error' : policyStartDateForm.policy_start_date.$invalid }">
+                                <label class="full">When would you be interested in starting a new policy with MetLife?</label>
+                                <input name="policy_start_date" type="date" class="col-md-4" ng-model="currentInsuranceForm.policy.startDate" required>
+                            </div>
+                        </ng-form>
+
+                    </div>
+                    <div class="col-md-6">
+                        <small>This should after August 15, 2014, your current policy expiration date.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="col-md-12">
+            <a href="#/quote" class="btn primary wide" ng-disabled="verifyInsuranceForm.$invalid">continue</a>&nbsp; Next, we'll help find some <strong>discounts</strong>
+        </footer>
+
+    </form>
+
+</div>

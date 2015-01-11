@@ -1,0 +1,31 @@
+<div class="pull-left mar-right-30">
+    <div class="styled-select">
+        <select ng-model="claim_form.form.category" id="category_select">
+            <option value="">Category</option>
+            <option value="Theft">Theft</option>
+        </select>
+    </div>
+</div>
+
+<div class="pull-left mar-right-30">
+    <div class="styled-select">
+        <select ng-model="claim_form.form.type" id="type_select">
+            <option value="">Type</option>
+            <option value="Robbery">Robbery</option>
+        </select>
+    </div>
+</div>
+
+<div class="pull-left mar-right-30">
+    <input ng-model="claim_form.form.date" id="type_input" class="form-control" type="date" placeholder="MM/DD/YYYY"/>
+</div>
+
+<div class="pull-left mar-right-30">
+    <button ng-click="addNewIncident()" id="add_button" class="btn primary">{{addBtnLabel}}</button>
+</div>
+
+<div>
+    <div id="entry_delete_button" ng-show="showDeleteButton">
+        <a ng-click="deleteIncident()">Delete this entry</a>
+    </div>
+</div>

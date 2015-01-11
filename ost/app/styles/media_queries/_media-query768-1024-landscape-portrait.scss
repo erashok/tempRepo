@@ -1,0 +1,7 @@
+@media screen and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  @import "../tablet";
+}
+
+@media screen and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  @import "../tablet";
+}

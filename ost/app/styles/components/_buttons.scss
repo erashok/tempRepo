@@ -1,0 +1,214 @@
+// button component
+// elements/_buttons.scss
+
+// primary mixin
+@mixin buttons {
+  a.btn,
+  button {
+    @include button(black, silver, silver);
+    box-shadow: 0px 3px 0px darker(silver, 10%);
+
+    &.primary  {
+      @include button(white, $orange-button-start, $orange-button-end);
+      box-shadow: inset 0px -3px 0px $orange-button-border;
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+
+      &:hover{
+        @include button(white, darken($orange-button-start, 5%), darken($orange-button-end, 5%));
+        box-shadow: inset 0px -3px 0px darken($orange-button-border, 5%);
+      }
+
+      &:active{
+        @include button(white, $orange-button-start, $orange-button-end);
+        box-shadow: inset 0px 3px 0px $orange-button-border;
+        line-spacing: -3px;
+        outline: none;
+      }
+
+      &.btn.disabled, &.btn[disabled]{
+        @include button($disabled-button-text, $disabled-button-start, $disabled-button-end);
+        box-shadow: inset 0px -3px 0px $disabled-button-border;
+      }
+
+    }
+
+    &.dark  {
+      @include button(white, $dark-blue-button-start, $dark-blue-button-end);
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      box-shadow: inset 0px -3px 0px $dark-blue-button-border;
+
+      &:hover{
+        @include button(white, darken($dark-blue-button-start, 8%), darken($dark-blue-button-end, 8%));
+        box-shadow: inset 0px -3px 0px darken( $dark-blue-button-border, 8%);
+      }
+
+      &:active{
+        @include button(white, $dark-blue-button-start, $dark-blue-button-end);
+        box-shadow: inset 0px 3px 0px $dark-blue-button-border;
+        line-spacing: -3px;
+        outline: none;
+      }
+
+    }
+
+    &.basic  {
+      @include button($mid-blue, white, white);
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      border: 1px solid $button-border;
+      text-shadow: none;
+      box-shadow: inset 0px -1px 0px $button-border;
+
+      &:hover{
+        @include button($mid-blue, darken( white, 5%), darken( white, 5%));
+        border: 1px solid darken($button-border, 8%);
+        text-shadow: none;
+      }
+
+      &:active{
+        @include button($mid-blue, white, white);
+        line-spacing: -3px;
+        outline: none;
+        text-shadow: none;
+        box-shadow: inset 0px 1px 0px $button-border;
+        border: 1px solid darken($button-border, 8%);
+      }
+
+    }
+
+    &.remove {
+      @include button($mid-blue, white, white);
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      border: 1px solid $button-border;
+      text-shadow: none;
+      box-shadow: inset 0px -1px 0px $button-border;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 500px) {
+        height: 32px;
+        width: 32px;
+        background-image: url("../assets/images/icons/icon_mobile_remove.svg");
+        background-color: #ffffff;
+        text-indent: -9999px;
+        color: #2377c5;
+        text-decoration: underline;
+        border: none;
+        box-shadow: none;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.remove-simple {
+      @include button($mid-grey, white, white);
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      text-shadow: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 500px) {
+          text-indent: -20px;
+          color: #afafaf !important;
+          text-decoration: underline !important;
+          position: relative;
+          right: 10px;
+      }
+    }
+
+    &.simple  {
+      @include button($mid-grey, white, white);
+      padding: 13px 20px 12px 20px;
+      font-size: 12px;
+      font-family: "FrutigerLTstdBold", "Noto Sans", "Helvetica Neue", "Arial", sans-serif;
+      text-shadow: none;
+
+      u{
+        border-bottom: 1px solid $rules;
+        text-decoration: none;
+      }
+
+      &:hover{
+        color: darken($mid-grey, 8%);
+        text-shadow: none;
+
+        u{
+          border-bottom: 1px solid darken($rules, 8%);
+        }
+      }
+
+      &:active{
+        @include button($mid-grey, white, white);
+        line-spacing: -3px;
+        text-shadow: none;
+        box-shadow: none;
+      }
+
+
+    }
+
+    &:focus{
+      outline: none;
+    }
+
+    &.large{
+      padding: 10px 30px;
+      font-size: 14px;
+    }
+
+    &.wide{
+      padding: 15px 60px;
+      font-size: 14px;
+    }
+
+
+    /* Fix */
+    //    @media screen and (min-width: 768px) and (max-width: 1200px) {
+    //      font-size: 0.9vw !important;
+    //    }
+
+  }
+}
+
+// button mixin
+@mixin button($text-color, $bg-color-1, $bg-color-2) {
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid transparent;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.35);
+
+  @include color-button($text-color, $bg-color-1, $bg-color-2);
+}
+
+// color button mixin
+@mixin color-button($text-color, $bg-color-1, $bg-color-2) {
+  color: $text-color;
+  border: 0;
+  @include x-linear-gradient("to bottom", $bg-color-1, $bg-color-1, $bg-color-2);
+}
+
+// bootstrap Override
+button.btn{
+  border:0px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+  outline: none !important;
+}
+
+

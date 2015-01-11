@@ -1,0 +1,143 @@
+#purchase_final {
+
+  header {
+    & .policy-number {
+      color: $mid-grey;
+    }
+  }
+
+  .info {
+    color: $mid-grey;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #renter_header {
+    border-top: solid 2px $mid-grey;
+    padding-top: 30px;
+    margin-top: 60px;
+    padding-left: 0;
+  }
+
+  #renters_policy_document_list,
+  #auto_policy_document_list {
+
+    padding-right: 50px !important;
+    padding-left: 0 !important;
+
+  }
+
+  #auto_policy_call_out,
+  #renters_policy_call_out{
+    header,
+    hr {
+      margin: 0;
+    }
+
+    section {
+      padding-top: 20px;
+    }
+  }
+
+  header.coverage-header {
+    border-bottom: solid 1px $light-grey;
+    margin: 0;
+    padding-bottom: 18px;
+
+    h2 {
+      font-size: 22px;
+      color: $mid-grey;
+    }
+  }
+
+  & .document-list {
+    border-bottom: solid 1px $light-grey;
+
+    & .wrapper {
+
+      float: left;
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    & .buttons {
+      button {
+        position: relative;
+        top: 20px;
+        float: right;
+      }
+    }
+
+    padding-top: 5px;
+    padding-bottom: 0px;
+
+  }
+
+  /*iPhone media query*/
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    & .document-list {
+
+      padding-bottom: 10px;
+
+      & .wrapper,
+      & .buttons button {
+        float: none;
+      }
+
+      & .buttons {
+
+        button {
+          top: -12px !important;
+          content: "download";
+        }
+
+      }
+
+    }
+
+    header#renter_header {
+      margin-top: 0px;
+      padding-bottom: 0 !important;
+    }
+
+    #auto_policy_call_out,
+    #renters_policy_call_out {
+
+      & .well.note {
+        margin-bottom: 0;
+      }
+
+      margin-top: 20px;
+    }
+
+    #renters_policy_document_list,
+    #auto_policy_document_list {
+
+      padding-right: 0px !important;
+
+      header {
+        margin-top: 0;
+
+        h2 {
+          margin-top: 0;
+          margin-bottom: 15px;
+        }
+
+      }
+    }
+
+    header {
+      margin-bottom: 0;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}

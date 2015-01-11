@@ -1,0 +1,286 @@
+#purchase_pay {
+
+  #credit_card_icons {
+    margin-top: 13px;
+    margin-left: 13px;
+  }
+
+  #auto_policy_document_list {
+
+    padding-right: 50px !important;
+    padding-left: 0 !important;
+
+  }
+
+  .accordion-well {
+    margin: 0;
+    padding: 15px 0px 15px 15px;
+    color: black;
+    text-align: left;
+    font-size: 14px;
+
+    & .icon {
+      position: relative;
+      top: -5px;
+      margin-right: 16px;
+      float: left;
+    }
+
+  }
+
+  #bill_me_well {
+    margin-bottom: 30px;
+  }
+
+  #e_signature {
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    padding-top: 30px;
+    padding-bottom: 80px;
+    border-top: solid $mid-grey 3px;
+
+    #e_sig_form {
+      margin-top: 20px;
+
+      #sign_on_paper {
+        text-align: right;
+      }
+
+      input {
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  .inline{
+    position: relative;
+    display: inline-block;
+    top: 8px;
+    left: 5px;
+    .cc{
+      float: left;
+      margin-right: 5px;
+      width: 30px;
+    }
+  }
+
+  #policy_call_out {
+
+    .summary {
+      padding-left: 50px;
+    }
+
+    #protection_info {
+      background: url("../assets/images/icons/icon_auto.svg") no-repeat;
+    }
+
+    #renters_info {
+      background: url("../assets/images/icons/icon_renters.svg") no-repeat;
+    }
+
+  }
+
+  #payment_method_list {
+
+    margin-bottom: 60px;
+
+    .help-icon {
+      position: relative;
+      top: 3px;
+      margin-left: 8px;
+    }
+
+    label .help {
+      position: relative;
+      top: 2px;
+      left: 0px;
+      
+      &:focus {
+	  	outline-width: 0;
+	  	outline: none;
+      }
+    }
+
+    .best-value-label {
+      background-color: #96ce35;
+      text-transform: uppercase;
+      position: relative;
+      margin: 0px 0px 0px 2px;
+      padding: 5px;
+      font-size: 8px;
+      bottom: 3px;
+    }
+
+    .icon-check-helper {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .accordion-wrap {
+
+      padding-left: 30px;
+      padding-bottom: 30px;
+
+      input[type='text'] {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+
+    & .radio {
+
+      ul {
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+        }
+      }
+
+      & .payment-details {
+        label {
+          padding-left: 0;
+          color: #000000;
+        }
+      }
+    }
+
+    label.method {
+      border-bottom: solid 1px #eff0f6;
+      display: block;
+      padding: 15px 0px 0px 0px;
+      color: #000000;
+      margin: 0;
+
+      p.footnote {
+        margin-left: 30px;
+      }
+
+      .form-group {
+        p.footnote {
+          margin-left: 0px;
+        }
+      }
+
+    }
+
+  }
+
+  footer {
+    border-top: solid 1px $light-grey;
+    padding-top: 50px;
+
+    button {
+      margin-right: 20px;
+    }
+
+  }
+
+  /*iPhone media query*/
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+
+    #credit_card_icons {
+      margin-top: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .icon-check-helper {
+      img {
+        width: 280px;
+      }
+    }
+
+    .accordion-well {
+      & .icon {
+        top: 2px;
+      }
+    }
+
+    select,
+    input[type="text"] {
+      width: 100%;
+    }
+
+    .accordion-wrap {
+      padding-left: 0 !important;
+    }
+
+    #e_signature {
+      padding-bottom: 0;
+    }
+
+    footer {
+      margin-bottom: 0;
+    }
+
+    #e_sig_form {
+
+      #sign_on_paper {
+        text-align: left !important;
+      }
+
+      p {
+
+        &:nth-child(2) {
+          margin-bottom: 5px;
+        }
+
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    #standard_protection,
+    #renters_protection {
+      margin-bottom: 10px;
+      color: #000000;
+
+      & .price {
+        color: $mid-grey;
+      }
+
+    }
+
+    #cta_link {
+
+      a {
+        text-decoration: underline;
+      }
+
+      #expand {
+        position: relative;
+        top: 5px;
+        margin-right: 10px;
+      }
+
+    }
+
+    #payment_method_list {
+      margin-bottom: 30px;
+    }
+
+    #auto_policy_document_list,
+    #e_signature {
+
+      header {
+        h2 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+
+      padding-right: 0px !important;
+      padding-left: 0 !important;
+
+    }
+
+  }
+
+}

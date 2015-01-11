@@ -1,0 +1,81 @@
+<!-- AUTO -->
+<header class="row pad-all-0">
+    <h2>Auto Insurance</h2>
+</header>
+
+<div class="row pad-all-0">
+
+    <!-- list -->
+    <div id="auto_policy_document_list" class="col-sm-7 col-md-7">
+
+        <header class="coverage-header mar-all-0">
+            <h2>Coverage Documents</h2>
+        </header>
+
+        <div class="document-list clearfix mar-all-0" ng-repeat="document in documents.auto">
+
+            <div class="pad-all-0 col-xs-9 col-sm-9 wrapper">
+                <h4>{{document.name}}</h4>
+                <p>{{document.description}}</p>
+            </div>
+
+            <div class="pad-all-0 col-sm-3 buttons">
+                <div ng-if="document.print">
+                    <button class="btn basic hidden-xs">Print</button>
+                    <button class="btn basic hidden-sm hidden-md hidden-lg">Download</button>
+                </div>
+                <div ng-if="!document.print">
+                    <button class="btn basic">Signup</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- call out -->
+    <div id="auto_policy_call_out" class="col-sm-5 col-md-5">
+
+        <div id="#" class="well note">
+
+            <header class="clearfix">
+                <div class="pull-left">
+                    <h4 class="mar-all-0 pad-all-0">Your Auto Policy</h4>
+                </div>
+                <div class="pull-right">
+                    <p class="policy-number">Policy #88997</p>
+                </div>
+            </header>
+
+            <hr class="mar-all-0"/>
+
+            <section id="policy_holder">
+                <span class="all-caps">policy holder</span>
+                <br/>
+                <p class="info">
+                    <b>Pat Reynolds</b> <br/>
+                    50 Main Street <br/> Warwick, RI 02887
+                </p>
+            </section>
+
+            <hr class="mar-all-0"/>
+
+            <section id="addl_drivers">
+                <span class="all-caps">additional drivers</span>
+                <br/>
+                <p class="info">
+                    <b>Mary Reynolds</b>
+                </p>
+            </section>
+
+            <hr class="mar-all-0"/>
+
+            <section id="vehicles">
+                <div ng-repeat="vehicle in vehicles" class="info">
+                    <b>{{vehicle.year}} {{vehicle.make}}</b> {{vehicle.model}}
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</div>

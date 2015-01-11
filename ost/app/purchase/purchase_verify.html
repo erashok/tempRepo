@@ -1,0 +1,54 @@
+<div id="purchase_knowledge_based_auth" class="col-md-12 pad-all-0">
+
+    <header>
+        <h2>We'll need to ask a few questions to ensure the security of your chosen payment method.</h2>
+    </header>
+
+    <form name="kbaForm" novalidate>
+
+        <section id="associated_phone_numbers" class="row pad-all-0">
+            <h3>Which of these phone numbers are associated with you?</h3>
+
+                <label class="radio">
+                    <input type="radio" name="phoneGroup" ng-model="kba.phoneNumbers" value="212-643-0098" ng-required="!kba.phoneNumbers"/>
+                    212-643-0098
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="phoneGroup" ng-model="kba.phoneNumbers" value="212-220-9877" ng-required="!kba.phoneNumbers"/> 212-220-9877
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="phoneGroup" ng-model="kba.phoneNumbers" value="646-330-8080" ng-required="!kba.phoneNumbers"/> 646-330-8080
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="phoneGroup" ng-model="kba.phoneNumbers" value="none" ng-required="!kba.phoneNumbers"/> None of the above
+                </label>
+
+        </section>
+
+        <section id="associated_address">
+            <h3>Which of the following addresses have you lived?</h3>
+
+                <label class="radio">
+                    <input type="radio" name="addressGroup" ng-model="kba.Address" value="1 Smith Street, Providence, RI 02809" ng-required="!kba.Address"/> 1 Smith Street, Providence, RI 02809
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="addressGroup" ng-model="kba.Address" value="7 Court Street, Meriden, CT 06598" ng-required="!kba.Address"/> 7 Court Street, Meriden, CT 06598
+                </label>
+
+                <label class="radio">
+                    <input type="radio" name="addressGroup" ng-model="kba.Address" value="20 Yale Ave, New Haven, CT 06789" ng-required="!kba.Address"/> 20 Yale Ave, New Haven, CT 06789
+                </label>
+
+        </section>
+
+        <footer class="row">
+            <button type="submit" class="btn primary wide" ng-disabled="kbaForm.$invalid">continue</button> We'll <strong>Process your payment</strong> next
+        </footer>
+
+    </form>
+
+</div>

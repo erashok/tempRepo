@@ -1,0 +1,58 @@
+#personal_info {
+  form {
+    padding: 0;
+  }
+
+  & .state-indicator{
+    margin-left: 15px;
+    position: relative;
+  }
+
+  .styled-select{
+    margin-top: 4px;
+  }
+
+  .form-inline{
+    .form-control{
+      padding: 0px;
+      margin-bottom: 40px;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+}
+
+#vehicle_lookup {
+  border-top: solid 1px $light-grey;
+  border-bottom: solid 1px $light-grey;
+  padding-bottom: 40px;
+  clear:left;
+
+  .image{
+    margin-top: 25px;
+  }
+  .copy{
+    h3{
+      margin: 20px 0px 5px 0px;
+    }
+    p.footnote{
+      margin: 0px 0px 15px 0px;
+    }
+  }
+}
+
+
+
+#your_info{
+  footer{
+    border-top: none;
+    padding: 40px 0px 60px 0px;
+    // text-align: center;
+
+    .btn{
+      margin-right: 35px;
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div id="auto_quote" class="col-md-12 pad-all-0">
+
+    <div class="compare_plans_button_region pull-right hidden-xs hidden-sm">
+        <a href="#/quote_coverage" class="btn basic">compare plans</a>
+    </div>
+
+    <div class="pad-all-0 mar-all-0">
+
+        <div class="psudo-select visible-xs">
+            <p><u>View other plans</u> <icon type="carrot_header"></icon></p>
+            <select class="plain"
+                    ng-model="selectedItem"
+                    ng-options="tab as tab.name for tab in plans"
+                    ng-change="updateTab(selectedItem.id)">
+            </select>
+        </div>
+
+        <tabset class="clearfix">
+
+            <tab ng-repeat="tab in plans" active="tab.active">
+
+                <tab-heading class="hidden-xs">
+                    <div>
+                        <span class="all-caps">{{tab.name}}</span>
+                        <h3 class="price">
+                            <sup>$</sup>{{tab.price}}
+                        </h3>
+                    </div>
+                </tab-heading>
+
+                <div ng-include="'/renters/_partials/_plan_tab_partial.html'"></div>
+
+            </tab>
+
+        </tabset>
+
+    </div>
+</div>

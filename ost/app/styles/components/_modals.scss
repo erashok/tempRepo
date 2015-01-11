@@ -1,0 +1,49 @@
+@mixin modals{
+
+  body.modal-open {
+    overflow: visible;
+    height: auto;
+  }
+
+  .modal-content{
+    border-radius: 0px;
+
+    .modal-header{
+      padding: 40px 55px 30px 55px;
+      height: auto;
+      min-height: 50px;
+      border-bottom: 1px solid $rules;
+      h4{
+        font-family:$frutiger-light;
+        font-size: 40px;
+      }
+      .close{
+        position: absolute;
+        top: 30px;
+        right: 45px;
+        opacity: 1;
+      }
+    }
+    .modal-body{
+      padding: 5px 60px 20px 60px;
+      .row{
+        padding: 0px;
+      }
+    }
+    .modal-footer{
+      background: $footer-bg;
+      padding: 30px 60px;
+      border-top: 1px solid $rules;
+    }
+
+  }
+
+  #vehicleModal{
+    .modal-body{
+      p{
+        color: $dark-grey;
+      }
+    }
+  }
+
+}

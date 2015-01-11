@@ -1,0 +1,32 @@
+@media screen and (min-width: 320px) and (max-width: 500px) {
+
+  .mobile-card {
+
+    &.faded {
+
+      strong {
+        color: #afafaf;
+      }
+
+      color: #afafaf;
+    }
+
+    button {
+      display: inline-block;
+    }
+
+    border-bottom: solid 1px $light-grey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 80px;
+
+    & .text {
+      padding-top: 10px;
+    }
+
+    & .icon {
+      margin-left: 20px;
+    }
+
+  }
+}

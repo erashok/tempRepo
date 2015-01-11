@@ -1,0 +1,381 @@
+<div id="renters_quote" class="col-md-12 pad-all-0">
+
+<div class="compare_plans_button_region pull-right">
+    <a href="#/quote_coverage" class="btn basic hidden-xs hidden-s">compare all 3</a>
+</div>
+
+<div class="pad-all-0 mar-all-0">
+
+<tabset class="clearfix">
+<!-- state minimum tab -->
+<tab select="loadContent(140)">
+    <tab-heading>
+        <span class="all-caps">state minimum</span>
+        <h3 class="price">
+            <sup>$</sup>140
+        </h3>
+    </tab-heading>
+
+    <section class="package_summary col-md-6 pad-all-0">
+        <div>
+            <h2>
+                State Minimum
+            </h2>
+            <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis, mi at aliquet fermentum, nisl nibh interdum augue, pretium euismod augue ipsum viverra velit. Sed laoreet nisl a ante hendrerit tempor.</p>
+            <h4>
+                This plan is most like your current insurance
+                <icon type="help" data-toggle="popover" data-placement="bottom" data-content="Your current plan is the Regional Standard."></icon>
+            </h4>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h4 class="green">Get additional savings</h4>
+            <p>Save up <strong>$80 per pay period</strong> with automatic payroll deduction.</p>
+        </div>
+    </section>
+
+    <section class="col-md-1"></section>
+
+    <section class="summary_call_to_action col-md-5 pad-all-0">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>140<sub>/month</sub>
+                </div>
+                <p class="savings">A savings of <sup>$</sup>20/month</p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="renters_coverage col-md-12 pad-all-0 coverage-row">
+        <header class="clearfix">
+            <h2>Your Renters Coverage</h2>
+            <p>These coverages protect you and your assets if you are in an accident</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <!-- renters coverage table -->
+    <div ng-include="'/quote/_partials/_renters_coverage_table.html'"></div>
+    <!-- eo -->
+
+
+    <section class="liability_coverage col-md-12 pad-all-0 coverage-row">
+        <header class="clearfix">
+            <h2>Your liability coverage</h2>
+            <p>These coverages protect you and your assets if you are in an accident</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <!-- liability table -->
+    <div ng-include="'/quote/_partials/_liability_coverage_table.html'"></div>
+    <!-- eo -->
+
+    <!-- vehicle coverage section -->
+    <section class="vehicle_coverage col-md-12 pad-all-0 coverage-row">
+        <header class="clearfix">
+            <h2>Coverage for your vehicles</h2>
+            <p>These coverages protect your vehicles if they are damaged</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <section ng-repeat="vehicle in vehicles" class="auto_section clearfix pad-all-0">
+
+        <div class="col-md-12 col-sm-12 lockup-heading">
+
+            <img class="car pull-left mar-right-30" src="assets/images/{{vehicle.image}}">
+
+            <small><strong class="grey">Vehicle {{$index + 1}} of {{vehicles.length}}</strong></small>
+            <div>
+                <h3><strong>{{vehicle.year}} {{vehicle.make}}</strong> <span class="light">{{vehicle.model}} {{vehicle.trim}}</span></h3>
+            </div>
+
+        </div>
+
+        <div ng-include="'renters/_partials/_vehicle_coverage_table.html'"></div>
+
+    </section>
+
+
+    <!-- footer CTA -->
+    <div class="footer-cta col-md-12">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>140<sub>/month</sub>
+                </div>
+                <p class="savings"><a href="#">A savings of <sup>$</sup>20/month</a></p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </div>
+
+</tab>
+
+<!-- standard tab -->
+<tab select="loadContent(160)">
+    <tab-heading>
+        <span class="all-caps">standard protection</span>
+        <h3 class="price">
+            <sup>$</sup>160
+        </h3>
+    </tab-heading>
+
+    <section class="package_summary col-md-6 pad-all-0">
+        <div>
+            <h2>
+                State Minimum
+            </h2>
+            <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis, mi at aliquet fermentum, nisl nibh interdum augue, pretium euismod augue ipsum viverra velit. Sed laoreet nisl a ante hendrerit tempor.</p>
+            <h4>
+                This plan is most like your current insurance
+                <icon type="help" data-toggle="popover" data-placement="bottom" data-content="Your current plan is the Regional Standard."></icon>
+            </h4>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h4 class="green">Get additional savings</h4>
+            <p>Save up <strong>$80 per pay period</strong> with automatic payroll deduction.</p>
+        </div>
+    </section>
+
+    <section class="col-md-1"></section>
+
+    <section class="summary_call_to_action col-md-5 pad-all-0">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>160<sub>/month</sub>
+                </div>
+                <p class="savings">A savings of <sup>$</sup>20/month</p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="liability_coverage col-md-12 coverage-row">
+        <header class="clearfix">
+            <h2>Your liability coverage</h2>
+            <p>These coverages protect you and your assets if you are in an accident</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <!-- liability table -->
+    <div ng-include="'/quote/_partials/_liability_coverage_table.html'"></div>
+    <!-- eo -->
+
+    <!-- vehicle coverage section -->
+    <section class="vehicle_coverage col-md-12 pad-all-0 coverage-row">
+        <header class="clearfix">
+            <h2>Coverage for your vehicles</h2>
+            <p>These coverages protect your vehicles if they are damaged</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <section ng-repeat="vehicle in vehicles" class="auto_section clearfix pad-all-0">
+
+        <div class="col-md-12 col-sm-12 lockup-heading">
+
+            <img class="car pull-left mar-right-30" src="assets/images/{{vehicle.image}}">
+
+            <small><strong class="grey">Vehicle {{$index + 1}} of {{vehicles.length}}</strong></small>
+            <div>
+                <h3><strong>{{vehicle.year}} {{vehicle.make}}</strong> <span class="light">{{vehicle.model}} {{vehicle.trim}}</span></h3>
+            </div>
+
+        </div>
+
+        <div ng-include="'renters/_partials/_vehicle_coverage_table.html'"></div>
+
+    </section>
+
+    <!-- footer CTA -->
+    <div class="footer-cta col-md-12">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>160<sub>/month</sub>
+                </div>
+                <p class="savings"><a href="#">A savings of <sup>$</sup>20/month</a></p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </div>
+
+</tab>
+
+<!-- total protection tab -->
+<tab select="loadContent(200)">
+    <tab-heading>
+        <span class="all-caps">total protection</span>
+        <h3 class="price">
+            <sup>$</sup>200
+        </h3>
+    </tab-heading>
+
+    <section class="package_summary col-md-6 pad-all-0">
+        <div>
+            <h2>
+                State Minimum
+            </h2>
+            <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis, mi at aliquet fermentum, nisl nibh interdum augue, pretium euismod augue ipsum viverra velit. Sed laoreet nisl a ante hendrerit tempor.</p>
+            <h4>
+                This plan is most like your current insurance
+                <icon type="help" data-toggle="popover" data-placement="bottom" data-content="Your current plan is the Regional Standard."></icon>
+            </h4>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h4 class="green">Get additional savings</h4>
+            <p>Save up <strong>$80 per pay period</strong> with automatic payroll deduction.</p>
+        </div>
+    </section>
+
+    <section class="col-md-1"></section>
+
+    <section class="summary_call_to_action col-md-5 pad-all-0">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>200<sub>/month</sub>
+                </div>
+                <p class="savings">A savings of <sup>$</sup>20/month</p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="liability_coverage col-md-12 coverage-row">
+        <header class="clearfix">
+            <h2>Your liability coverage</h2>
+            <p>These coverages protect you and your assets if you are in an accident</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <!-- liability table -->
+    <div ng-include="'/quote/_partials/coverage_tables/_liability_coverage_table.html'"></div>
+    <!-- eo -->
+
+    <!-- vehicle coverage section -->
+    <section class="vehicle_coverage col-md-12 pad-all-0 coverage-row">
+        <header class="clearfix">
+            <h2>Coverage for your vehicles</h2>
+            <p>These coverages protect your vehicles if they are damaged</p>
+            <a class="pull-right expand" href="#">Edit Vehicles &amp; Drivers</a>
+        </header>
+    </section>
+
+    <section ng-repeat="vehicle in vehicles" class="auto_section clearfix pad-all-0">
+
+        <div class="col-md-12 col-sm-12 lockup-heading">
+
+            <img class="car pull-left mar-right-30" src="assets/images/{{vehicle.image}}">
+
+            <small><strong class="grey">Vehicle {{$index + 1}} of {{vehicles.length}}</strong></small>
+            <div>
+                <h3><strong>{{vehicle.year}} {{vehicle.make}}</strong> <span class="light">{{vehicle.model}} {{vehicle.trim}}</span></h3>
+            </div>
+
+        </div>
+
+        <div ng-include="'renters/_partials/coverage_tables/_vehicle_coverage_table.html'"></div>
+
+    </section>
+
+    <!-- footer CTA -->
+    <div class="footer-cta col-md-12">
+        <div class="well normal">
+            <div class="well inline info">
+
+                <div class="price price-lg">
+                    <sup>$</sup>200<sub>/month</sub>
+                </div>
+                <p class="savings"><a href="#">A savings of <sup>$</sup>20/month</a></p>
+                <div class="purchase-cta">
+                    <button class="btn primary large">Buy Auto Insurance</button>
+                    <p class="footnote">Or call <strong>1-800-422-4272</strong></p>
+                </div>
+
+            </div>
+
+            <div class="inline">
+                <p>Protect your valuables for only <span class="price"><strong><sup>$</sup>1.60</strong></span> more a month</p>
+                <button class="renter-cta btn dark">Get Renter's Insurance Quote</button>
+            </div>
+
+        </div>
+    </div>
+
+</tab>
+</tabset>
+</div>
+
+</div>

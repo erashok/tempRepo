@@ -1,0 +1,123 @@
+<div id="purchase_drivers" class="col-md-12 pad-all-0">
+
+    <!-- drivers list for purchase/confirm -->
+    <form class="form-horizontal" role="form">
+        <div class="row driver-confirm-list clearfix pad-all-0 mar-all-0" ng-repeat="driver in drivers">
+
+            <header class="clearfix pad-all-0">
+                <div class="col-md-12 lockup-heading">
+
+
+                    <icon class="avatar mar-right-30" type="avatar" width="37" height="38"></icon>
+
+                    <div>
+                        <small>Driver {{$index + 1}} of {{drivers.length}}</small>
+                        <h2><strong>{{driver.data.firstName}} {{driver.data.lastName}}</strong></h2>
+                    </div>
+
+                </div>
+            </header>
+
+
+            <section class="pad-all-0">
+                <!-- fullname -->
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Your Name as it Appears on Your License:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="driver.data.fullName">
+                    </div>
+                </div>
+
+                <!-- drivers license -->
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Driver's License Number:</label>
+                    <div class="col-sm-6">
+                        <div class="license-num">
+
+                            <div class="state-select">
+                                <div class="styled-select">
+                                    <select name="" ng-model="driver.data.licenseState">
+                                        <option value="AL">AL</option>
+                                        <option value="AK">AK</option>
+                                        <option value="DC">DC</option>
+                                        <option value="MD">MD</option>
+                                        <option value="NY">NY</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <input type="text" ng-model="driver.data.licenseNumber">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="driver.primary">
+                    <!-- email address -->
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Email Address:</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" ng-model="driver.email">
+                        </div>
+                    </div>
+
+                    <!-- phone number -->
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Primary Phone:</label>
+                        <div class="col-sm-6">
+                            <input type="tel" class="form-control" ng-model="driver.phone">
+                        </div>
+                    </div>
+
+                    <!-- alt phone number -->
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Alternative Phone:</label>
+                        <div class="col-sm-6">
+                            <input type="tel" class="form-control" ng-model="driver.altphone">
+                        </div>
+                    </div>
+
+                    <!-- phone number -->
+                    <div class="form-group">
+                        <label ng-init="driver.editMode = false" class="col-sm-6 control-label">We'll use this for your billing address:</label>
+                        <div class="col-sm-6">
+
+                            <address ng-hide="driver.editMode">
+                                {{driver.address.street}}<br>
+                                {{driver.address.city}}, {{driver.address.state}} {{driver.address.zip}}
+                            </address>
+                            <a id="edit_property" ng-hide="driver.editMode" ng-click="driver.editMode = true"><u>Edit Address</u></a>
+
+                            <div ng-show="driver.editMode">
+                                <input type="text" ng-model="driver.address.street"><br>
+                                <input type="text" ng-model="driver.address.city">
+
+                                <div class="state-select">
+                                    <div class="styled-select">
+                                        <select name="" ng-model="driver.address.state">
+                                            <option value="AL">AL</option>
+                                            <option value="AK">AK</option>
+                                            <option value="DC">DC</option>
+                                            <option value="MD">MD</option>
+                                            <option value="NY">NY</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input type="text" ng-model="driver.address.zip">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- primary driver conditions -->
+
+            </section>
+
+        </div>
+    </form>
+
+    <footer class="row">
+        <button class="btn primary wide" ng-disabled="yourInfoForm.$invalid" ng-click="continueClick();">continue</button> We'll <strong>setup payment</strong> next
+    </footer>
+
+</div>

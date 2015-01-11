@@ -1,0 +1,150 @@
+<div class="footer clearfix" ng-if="isDefaultHeader">
+
+    <div id="lower_content">
+        <h2 class="light">Get More with MetLife Home &amp; Auto Insurance</h2>
+
+        <div class="callout col-md-4 col-sm-4">
+            <div class="icon tool">
+                <icon type="homepage_tools"></icon>
+            </div>
+            <h3 class="light">Glass Repair without a Deductible</h3>
+            <p class="footnote">Have your window repaired instead of replaced, with no deductible.</p>
+        </div>
+
+        <div class="callout col-md-4 col-sm-4">
+            <div class="icon lock">
+                <icon type="homepage_lock"></icon>
+            </div>
+            <h3 class="light">Free Identity Protection Services</h3>
+            <p class="footnote">Identity protection, for each stage of your life, is included on all policies.</p>
+        </div>
+
+        <div class="callout col-md-4 col-sm-4">
+            <div class="icon auto">
+                <icon type="homepage_car"></icon>
+            </div>
+            <h3 class="light">Earn a $50 credit for Safe Driving</h3>
+            <p class="footnote">Earn a $50 credit (up to $250) for each year of claim-free driving.</p>
+        </div>
+    </div>
+
+</div>
+
+<div id="start_quote" ng-if="isDefaultHeader">
+
+    <div class="container pad-all-0">
+
+        <h1>Get a custom quote in minutes.</h1>
+        <div class="well">
+            <form class="form-inline" name="zipCodeForm" ng-submit="lookupZip(zip)">
+                <div class="form-group">
+
+                    <div class="tooltip top lower" style="opacity: 1;" role="tooltip" ng-show="zipCodeForm.zip.$error.pattern || zipCodeForm.zip.$error.minlength" >
+                        <div class="tooltip-arrow"></div>
+                        <div class="tooltip-inner">
+                            Please enter 5 numbers
+                        </div>
+                    </div>
+
+                    <input type="text" placeholder="Zip Code" name="zip" ng-model="zip" ng-minlength="5" ng-pattern="/^\-?\d+$/" maxlength="5" size="15" required class="zip">
+                    <button type="submit" class="btn primary" ng-click="startQuote(zip)">Get a Quote</button>
+                    <!-- x-ng-disabled="zipCodeForm.$invalid" -->
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer" ng-class="{'home': isDefaultHeader}">
+    <div class="container">
+
+        <div class="visible-xs row">
+
+            <div class="dropdown col-xs-12 pad-all-0">
+                <span class="all-caps ">Need Help?</span>
+                <a class="call" href="tel:18004224272">1-800-422-4272</a>
+            </div>
+
+            <div class="saved-quote col-xs-12 pad-all-0" ng-if="!isDefaultHeader">
+                <span class="all-caps">We've saved your quote</span><br/>
+                <p class="light">Quote #201495233315</p>
+            </div>
+
+        </div>
+
+        <div class="row contact hidden-xs" ng-if="!isDefaultHeader">
+
+            <div class="col-md-4 col-sm-4 pad-all-0">
+                <span class="all-caps clearfix">Call an Agent Now</span>
+                <h3 class="green">1-800-422-4272</h3>
+
+                <table class="business-hours">
+                    <tr>
+                        <td class="left">Monday-Saturday</td>
+                        <td class="right">9am-8pm EST</td>
+                    </tr>
+                    <tr>
+                        <td class="left">Sunday</td>
+                        <td class="right">9am-5pm EST</td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-4 col-sm-4 pad-all-0">
+                <span class="all-caps">Request a Call</span>
+                <p>We'll call you when an agent is available</p>
+
+                <div class="input-group">
+                    <input type="tel" size="15" placeholder="Phone Number" ng-pattern="/\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/">
+                    <button class="btn basic">Call Me</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 pad-all-0">
+                <span class="all-caps">Chat with an Agent</span>
+                <p>Get online help with a agent</p>
+                <button class="btn dark">Chat with Agent</button>
+            </div>
+
+        </div>
+
+        <div class="row copyright" ng-class="{'home': isDefaultHeader}">
+
+            <div class="col-md-8 col-sm-8 col-xs-12 pad-all-0">
+                <p>&copy; 2014 MetLife Auto &amp; Home. PEANUTS &copy; Peanuts Worldwide, LLC.</p>
+
+                <p>
+                    <a ng-href="#">Privacy Policy</a>
+                    <a ng-href="#">Information Disclosure</a>
+                    <a ng-href="#">Legal Notices</a>
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-4 pad-all-0 hidden-xs">
+                <div class="saved-quote" ng-if="!isDefaultHeader">
+                    <span class="all-caps">We've saved your quote</span><br/>
+                    <p class="light">Quote #201495233315</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="disclaimer" ng-if="isDefaultHeader">
+            <p class="footnote">
+                Available in most states, except to customers in NC and NH. Not available with
+                all policy forms.
+            </p>
+            <p class="footnote">
+                Deductible Savings Benefits (DSB) is not available in all states. NY drivers
+                must pay a state-required minimum deductible before using this benefit.
+            </p>
+        </div>
+
+    </div>
+    <!--/.container-->
+</div>
+
+

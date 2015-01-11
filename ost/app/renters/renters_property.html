@@ -1,0 +1,288 @@
+<div id="renters_property" class="col-md-12 pad-all-0">
+
+    <div class="row renters-confirm-list clearfix">
+
+        <form class="form-horizontal" role="form" name="rentersCoverageForm" novalidate>
+
+        <header class="clearfix pad-all-0">
+            <h2>We'll need to confirm a few details to provide an accurate quote for your home and belongings.</h2>
+        </header>
+
+
+        <section class="pad-all-0">
+
+            <!-- currently attaching driver info model for continuity -->
+
+            <label class="full" ng-init="driver.editMode = false">Property Address</label>
+
+            <address ng-hide="driver.editMode">
+                {{driver.fullname}}<br>
+                {{driver.address.street}}<br>
+                {{driver.address.city}}, {{driver.address.state}} {{driver.address.zip}}<br>
+                Birth Date: {{driver.birthdate}}
+
+            </address>
+            <a id="edit_property" ng-hide="driver.editMode" ng-click="driver.editMode = true"><u>Edit Info</u></a>
+
+            <div ng-show="driver.editMode">
+                <input type="text" ng-model="driver.address.street"><br>
+                <input type="text" ng-model="driver.address.city"><br>
+
+                <!-- firefox needs widths for state-select in order to scale -->
+                <div class="state-select">
+                    <div class="styled-select">
+                        <select name="" ng-model="driver.address.state">
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="DC">DC</option>
+                            <option value="MD">MD</option>
+                            <option value="NY">NY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="text" size="10" ng-model="driver.address.zip"><br>
+                <input type="text" ng-model="driver.birthdate" placeholder="MM/DD/YYYY">
+            </div>
+
+        </section>
+
+        <section class="pad-all-0">
+
+            <label class="full">Co-Applicant</label>
+            <ul class="unstyled">
+                <li ng-repeat="driver in drivers | filter: driver.firstname!='Bart'"><strong>{{driver.fullname}}</strong></li>
+            </ul>
+
+            <button id="add_applicant" class="btn basic">Add Another Co-Applicant</button>
+
+            <p class="footnote">This is anyone who may need to file a claim at this address.</p>
+
+        </section>
+
+        <hr>
+
+        <header class="clearfix pad-all-0">
+            <h2>Tell us a little more about where you live</h2>
+        </header>
+
+        <section class="col-md-12 pad-all-0">
+
+            <label class="full">What kind of building is it?</label>
+            <div class="col-md-2 pad-all-0">
+                <div class="styled-select">
+                    <select>
+                        <option>Apartment</option>
+                        <option>Residental</option>
+                        <option>Office/Retail</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- units in building -->
+            <ng-form name="unitsFieldForm">
+                <div ng-class="{ 'has-error' : unitsFieldForm.units.$invalid }">
+                    <label class="full">Number of units in the building</label>
+                    <input name="units" type="number" size="5" min="1" ng-model="driver.units" required> <small><strong>Units</strong></small>
+                    <input-validation-message expression="unitsFieldForm.units.$invalid" message="'Please enter a number greater than 0'"></input-validation-message>
+                </div>
+            </ng-form>
+
+            <label class="full">County</label>
+            <input type="text" placeholder="County Name">
+
+            <hr>
+
+            <label class="full">Please tell use more about your property</label>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Have you been at this address for less than 6 months?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input type="radio" name="address_6_months" value="yes"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="address_6_months" value="no"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Is there a daycare facility on site?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input type="radio" name="day_care_on_site" value="yes"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="day_care_on_site" value="no"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Do you conduct a business on site?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input type="radio" name="business_on_site" value="yes"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="business_on_site" value="no"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Do you make use of solid fuel appliances here?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input type="radio" name="solid_fuel_on_site" value="yes"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="solid_fuel_on_site" value="no"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Are there animals on the premises?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input type="radio" name="animals_on_site" value="yes"> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="animals_on_site" value="no"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h4 class="col-sm-6 grey">Have you had any claims in the past 5 years?</h4>
+                <div class="col-sm-6 radio">
+                    <label>
+                        <input ng-model="hadClaims" type="radio" name="claims_past_5_years" value="true"> Yes
+                    </label>
+                    <label>
+                        <input ng-model="hadClaims" type="radio" name="claims_past_5_years" value="false"> No
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- conditional call out -->
+            <div id="claim_history" ng-show="hadClaims">
+
+                <!-- accident list -->
+                <section ng-if="listClaims" id="accident_list" ng-hide="claim_collection.length == 0">
+                    <div id="list">
+                        <ul>
+                            <li ng-repeat="oops in claim_collection track by $index">{{oops.category}} / {{oops.type}} -
+                                {{oops.date | date:'MM/dd/yyyy' }}<a ng-click="editIncident($index)">&nbsp; {{editModeLabel}}</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- new accident form -->
+                <section id="new_accident_form" class="col-md-12">
+
+                    <div ng-show="addNewClaim">
+                        <strong>Please specify the type and date of occurrence (since 09/2009):</strong>
+
+                        <form class="form-inline">
+                            <div class="form-group row" ng-include="'/renters/_partials/_claim_form.html'"></div>
+                        </form>
+                    </div>
+
+                    <button id="additional_incident_button" ng-show="addlAccidentButton" ng-click="addAddlIncident()"
+                            class="btn basic wide">add an additional accident, violation or claim
+                    </button>
+                </section>
+
+            </div>
+            <!-- eo -->
+
+            <hr>
+
+            <label class="full">You can earn discounts for certain property features. Select all that apply.</label>
+
+            <div class="form-group">
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> Central Fire Alarm
+                        </label>
+                        <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-html="true" data-content="The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. <ul><li>Part One</li><li>Part Two</li></ul> Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee."></icon>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox2" value="option1"> Local Burglar Alarm
+                        </label>
+                        <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-content="..."></icon>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox3" value="option1"> Full Sprinkler System
+                        </label>
+                        <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-content="..."></icon>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox4" value="option1"> Controlled Access Community or Building?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox5" value="option1"> Half Sprinkler System
+                        </label>
+                        <icon class="help" type="help" data-toggle="popover" data-placement="bottom" data-content="..."></icon>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox6" value="option1"> I also have a Metlife Home policy
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="inline-radio">
+                        <label class="checkbox">
+                            <input type="checkbox" id="inlineCheckbox7" value="option1"> Central Burglar Alarm
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+    <footer class="row">
+        <button type="submit" class="btn primary wide" ng-disabled="yourInfoForm.$invalid">continue</button>
+    </footer>
+
+
+    </form>
+
+</div>

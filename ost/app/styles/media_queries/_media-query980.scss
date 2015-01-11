@@ -1,0 +1,47 @@
+@media screen and (max-width: 980px) {
+  #header_internal {
+    width: auto;
+
+    .header_internal_wrapper {
+      width: 110%;
+    }
+  }
+
+  div.inner-page-message {
+
+    .details-header {
+      width: auto;
+      margin: 0;
+    }
+  }
+
+  .container, .footer .container, .global-message .message-wrapper {
+    width: auto;
+  }
+
+  .modal-content {
+
+    .modal-body {
+      padding-top: 3px;
+      padding-bottom: 25px;
+      
+      > .row {
+	      
+	      > div {
+		      float: none;
+		      width: 100%;
+	      }
+      }
+      
+      hr {
+        margin-top: 55px;
+        margin-bottom: 56px;
+      }
+
+      .styled-select select {
+        width: 100%;
+      }
+    }
+  }
+
+}

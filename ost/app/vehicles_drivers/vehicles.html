@@ -1,0 +1,115 @@
+<div id="vehicle_driver_page" class="col-md-12 pad-all-0">
+        <!-- vehicles list -->
+        <section class="vehicles clearfix">
+
+            <header class="col-md-12 clearfix pad-all-0">
+                <div class="pull-left">
+                    <h2>We'll include these vehicles in your quote</h2>
+                    <p>If you have any other vehicles that should be covered, add them here.</p>
+                </div>
+
+                <div id="help_text" class="pull-right hidden-xs">
+                    <a href="#"><u>How did we find this info?</u></a>
+                </div>
+            </header>
+
+            <section id="vehicles" class="col-md-12 pad-all-0">
+                <!-- vehicle list -->
+                <div ng-repeat="vehicle in vehicles" class="card col-lg-3 col-md-4 col-sm-4">
+                    <vehicle-card class="inner-card" prefill="prefill" vehicles="vehicles" data="vehicle.data" index="$index"></vehicle-card>
+                </div>
+
+                <!-- add vehicle desktop -->
+                <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs">
+                    <div class="well info" ng-hide="vehicles.length === maxVehicles">
+                        <p class="large light">Don't see your vehicle listed?</p>
+                        <button class="btn dark full" data-toggle="modal" data-target="#vehicleModal">+ Add A Vehicle</button>
+                    </div>
+                </div>
+
+                <!-- add vehicle mobile -->
+                <footer class="col-xs-12 pad-all-0 visible-xs">
+                    <button class="btn dark" data-toggle="modal" data-target="#vehicleModal">+ Add A Vehicle</button>
+                </footer>
+
+            </section>
+
+        </section>
+        <!-- eo -->
+
+        <!-- drivers list -->
+        <section class="drivers clearfix">
+
+            <header class="col-md-12 pad-all-0">
+                <h2>We'll include these drivers in your quote</h2>
+                <p>Please make sure all drivers in your household are listed here</p>
+            </header>
+
+            <section id="drivers" class="col-md-12 pad-all-0">
+
+                <div ng-repeat="driver in drivers" class="card col-lg-3 col-md-4 col-sm-4">
+                    <!-- driver view desktop -->
+                    <div class="inner-card hidden-xs">
+                        <div class="well">
+                            <icon type="avatar" width="37" height="38"></icon>
+                            <h4>{{driver.data.firstName}} {{driver.data.lastName}}</h4>
+                            <button ng-hide="driver.data.driverId == 1" class="btn basic full" ng-click="removeDriver($index)">Remove</button>
+							              <span class="primary-driver-label" ng-show="driver.data.driverId == 1">Policy Holder</span>
+                        </div>
+                    </div>
+
+                    <!-- driver view mobile -->
+                    <div class="mobile-card visible-xs clearfix">
+                        <div class="text col-xs-10 pad-all-0">
+                            <strong>{{driver.firstName}} {{driver.lastName}}</strong>
+                        </div>
+
+                        <div class="icon col-xs-1 pad-all-0">
+                            <icon type="mobile_remove" class="icon-mobile-remove" ng-hide="driver.primary" ng-click="removeDriver($index)"></icon>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- add driver desktop-->
+                <div class="col-lg-3 col-md-4 col-sm-4  hidden-xs">
+                    <div class="well info">
+                        <p class="large light">Don't see your driver listed?</p>
+                        <button class="btn dark full" data-toggle="modal" data-target="#driverModal">+ Add A Driver</button>
+                    </div>
+                </div>
+
+                <footer class="col-xs-12 pad-all-0 visible-xs">
+                    <button class="btn dark" data-toggle="modal" data-target="#driverModal">+ Add A Driver</button>
+                </footer>
+
+            </section>
+
+        </section>
+        <!-- eo -->
+
+        <!-- ##### MODAL INCLUDES ##### -->
+
+        <!-- Driver Modal -->
+        <div ng-include="'/vehicles_drivers/_partials/_new_driver_modal.html'"></div>
+        <!-- Vehicle Modal -->
+        <div ng-include="'/vehicles_drivers/_partials/_new_vehicle_modal.html'"></div>
+
+        <!-- EO -->
+
+        <hr class="mar-bottom-0" />
+
+        <footer class="inner-page-footer clearfix">
+            <!-- desktop footer -->
+            <div class="hidden-xs">
+                <a href="{{'#/vehicle/' + vehicles[0].id}}" class="btn primary wide" ng-disabled="verifyInsuranceForm.$invalid">continue to quote</a>&nbsp; Next, we'll gather some <strong>vehicle details</strong>
+            </div>
+
+            <!-- mobile footer -->
+            <div class="col-xs-12 visible-xs pad-all-0">
+                <p>Next, we'll gather some <strong>vehicle details</strong></p>
+                <a href="{{'#/vehicle/' + vehicles[0].id}}" class="btn primary wide" ng-disabled="verifyInsuranceForm.$invalid">continue to quote</a>
+            </div>
+        </footer>
+
+    </div>
